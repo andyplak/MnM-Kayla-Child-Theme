@@ -31,29 +31,11 @@ ID, 'post_id' );
             <p>
               <i class="wt-icon-calendar"></i>
               <strong>
-              <?php
-                //$date_format = ( get_option('dbem_date_format') ) ? get_option('dbem_date_format'):get_option('date_format');
-                $date_format = 'l jS \o\f F';
-                if( $EM_Event->event_start_date != $EM_Event->event_end_date){
-                  echo date_i18n($date_format, $EM_Event->start). get_option('dbem_dates_separator') . date_i18n($date_format, $EM_Event->end);
-                }else{
-                  echo date_i18n($date_format, $EM_Event->start);
-                }
-              ?>
+              <?php echo $EM_Event->output('#_EVENTDATES') ?>
+              <?php //$date_format = 'l jS \o\f F'; ?>
               </strong>
               <br/>
-              <?php
-                if( !$EM_Event->event_all_day ){
-                  $time_format = ( get_option('dbem_time_format') ) ? get_option('dbem_time_format'):get_option('time_format');
-                  if($EM_Event->event_start_time != $EM_Event->event_end_time ){
-                    echo 'From '.date_i18n($time_format, $EM_Event->start).' till '. date_i18n($time_format, $EM_Event->end);
-                  }else{
-                    echo date_i18n($time_format, $EM_Event->start);
-                  }
-                }else{
-                  echo get_option('dbem_event_all_day_message');
-                }
-              ?>
+              <?php echo $EM_Event->output('#_EVENTTIMES') ?>
             </p>
           </div>
         </div>
@@ -120,7 +102,7 @@ ID, 'post_id' );
           </span>
         <?php endif ?>
 
-        <?php echo $EM_Event->post_content ?>
+        <?php echo $EM_Event->output('#_EVENTNOTES'); ?>
 
       </div>
 
@@ -131,9 +113,7 @@ ID, 'post_id' );
       <div class="framed_box rounded">
         <h6 class="framed_box_title">Book this event</h6>
         <div class="framed_box_content clearfix">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor dictum auctor. Sed magna felis, pulvinar in ultricies nec, viverra quis quam. Nulla sed feugiat purus.
-            <br></p>
+          <?php echo $EM_Event->output('#_BOOKINGFORM'); ?>
           <div class="clearboth"></div>
         </div>
       </div>
