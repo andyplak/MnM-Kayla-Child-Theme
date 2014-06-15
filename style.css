@@ -8,3 +8,51 @@
 */
 
 @import url("../kayla/style.css");
+
+.spaces-avail {
+  color: #5db348;
+}
+
+.spaces-last {
+  color: #ffbd31;
+}
+
+.spaces-sold-out {
+  color: #e24848;
+}
+
+.mnm-events-list {
+  font-size: 0.8em;
+}
+
+.mnm-events-list .event-description {
+  width: 160px;
+}
+
+.mnm-events-list .event-time {
+  width: 160px;
+}
+
+.mnm-events-list .event-age {
+  width: 35px;
+}
+
+.mnm-events-list .event-status {
+  width: 95px;
+}
+
+/*
+.mnm-events-list .event-action {
+  width: 80px;
+}
+*/
+
+.mnm-events-list .event-desc img {
+  float: left;
+  margin-right: 4px;
+}
+
+.mnm-events-list a.wt_button {
+  width: 75px;
+  margin: 0;
+}
