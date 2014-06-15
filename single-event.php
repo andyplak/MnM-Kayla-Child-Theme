@@ -85,9 +85,7 @@ ID, 'post_id' );
         <div class="framed_box rounded">
           <h6 class="framed_box_title">Location</h6>
           <div class="framed_box_content clearfix">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor dictum auctor. Sed magna felis, pulvinar in ultricies nec, viverra quis quam. Nulla sed feugiat purus.
-              <br></p>
+
             <div class="clearboth"></div>
           </div>
         </div>
@@ -97,7 +95,11 @@ ID, 'post_id' );
       <div class="three_fifth last">
 
         <?php if( has_post_thumbnail( $EM_Event->ID ) ) : ?>
-          <?php echo get_the_post_thumbnail( $EM_Event->ID, 'large'); ?>
+          <span class="image_frame styled_image">
+            <span class="image_holder" style="background-image: none;">
+              <?php echo get_the_post_thumbnail( $EM_Event->ID, 'large'); ?>
+            </span>
+          </span>
         <?php endif ?>
 
         <?php echo $EM_Event->post_content ?>
