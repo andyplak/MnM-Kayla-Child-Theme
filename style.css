@@ -77,3 +77,9 @@ body.single-event .wt_button.small span {
   font-weight: normal;
   padding: 0 5px;
 }
+
+body.single-event .em-booking-form-details input.input,
+body.single-event .em-booking-form-details textarea,
+body.single-event select {
+  width: 235px;
+}
