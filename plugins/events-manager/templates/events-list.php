@@ -116,13 +116,7 @@ if ( $events_count > 0 ) {
 
 						$prices[ $EM_Ticket->ticket_name ] = $EM_Ticket->get_price(true);
 
-						if( $EM_Ticket->get_spaces() > 2 ) {
-							echo '<span class="spaces-avail">Spaces Available</span>';
-						} elseif( $EM_Ticket->get_spaces() > 0 ) {
-							echo '<span class="spaces-last">Last Spaces</span>';
-						}else{
-							echo '<span class="spaces-sold-out">Sold out</span>';
-						}
+						echo mnm_kayla_show_ticket_availability( $EM_Ticket );
 					}
 					echo '<br />';
 				}

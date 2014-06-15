@@ -60,9 +60,24 @@ ID, 'post_id' );
         <div class="framed_box rounded">
           <h6 class="framed_box_title">Participants</h6>
           <div class="framed_box_content clearfix">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor dictum auctor. Sed magna felis, pulvinar in ultricies nec, viverra quis quam. Nulla sed feugiat purus.
-              <br></p>
+            <?php
+              foreach( $EM_Event->get_tickets()->tickets as $EM_Ticket ) {
+
+                // Define class name if last iteration
+                $last = ($EM_Ticket === end( $EM_Event->get_tickets()->tickets ) ? "last":"");
+                echo '<div class="one_half '.$last.'">';
+
+                if( $EM_Ticket->ticket_name == 'Male' ) {
+                  echo "<h5>♂ Men</h5>";
+                  echo "Age: ".$EM_Event->event_attributes['Age Range']; // Looks like we'll be needing age range for both genders
+                }
+                if( $EM_Ticket->ticket_name == 'Female' ) {
+                  echo "<h5>♀ Female</h5>";
+                  echo "Age: ".$EM_Event->event_attributes['Age Range'];
+                }
+                echo '<br />', mnm_kayla_show_ticket_availability( $EM_Ticket ), '</div>';
+              }
+            ?>
             <div class="clearboth"></div>
           </div>
         </div>
