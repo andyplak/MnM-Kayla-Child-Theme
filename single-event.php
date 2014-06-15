@@ -29,7 +29,8 @@ ID, 'post_id' );
           <h6 class="framed_box_title">Date &amp Time</h6>
           <div class="framed_box_content clearfix">
             <p>
-              <i class="wt-icon-calendar"></i><strong>
+              <i class="wt-icon-calendar"></i>
+              <strong>
               <?php
                 //$date_format = ( get_option('dbem_date_format') ) ? get_option('dbem_date_format'):get_option('date_format');
                 $date_format = 'l jS \o\f F';
@@ -85,6 +86,23 @@ ID, 'post_id' );
         <div class="framed_box rounded">
           <h6 class="framed_box_title">Location</h6>
           <div class="framed_box_content clearfix">
+            <h5>
+              <i class="wt-icon-map-marker"></i>
+              <?php echo $EM_Event->event_attributes['Region'] ?>
+            </h5>
+
+            <div class="three_fifth">
+              <?php if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
+                echo ( isset($EM_Location->location_name) ? $EM_Location->location_name.'<br />' : '');
+                echo ( isset($EM_Location->location_address) ? $EM_Location->location_address.'<br />' : '');
+                echo ( isset($EM_Location->location_town) ? $EM_Location->location_town.'<br />' : '');
+                echo ( isset($EM_Location->location_postcode) ? $EM_Location->location_postcode.'<br />' : '');
+              } ?>
+            </div>
+
+            <div class="two_fifth last">
+              <a class="wt_button black small full" href="<?php echo $EM_Location->get_permalink() ?>"><span>More details</span></a>
+            </div>
 
             <div class="clearboth"></div>
           </div>
