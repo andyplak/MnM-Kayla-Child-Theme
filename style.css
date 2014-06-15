@@ -21,6 +21,8 @@
   color: #e24848;
 }
 
+
+/************ EVENTS LIST *************/
 .mnm-events-list {
   font-size: 0.8em;
 }
@@ -55,4 +57,9 @@
 .mnm-events-list a.wt_button {
   width: 75px;
   margin: 0;
+}
+
+/************** SINGLE EVENTS PAGE ******************/
+body.single-event .framed_box_title {
+  background-color: #222222;
 }
