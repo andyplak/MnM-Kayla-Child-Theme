@@ -20,3 +20,8 @@ function mnm_kayla_show_ticket_availability( $EM_Ticket ) {
     return '<span class="spaces-sold-out">Sold out</span>';
   }
 }
+
+function mnm_kayla_enqueue_scripts() {
+  wp_enqueue_script('mnm-kayla-child', get_stylesheet_directory_uri().'/js/kayla-child.js', array('jquery'));
+}
+add_action('em_enqueue_scripts', 'mnm_kayla_enqueue_scripts');
