@@ -20,12 +20,3 @@ function mnm_kayla_show_ticket_availability( $EM_Ticket ) {
     return '<span class="spaces-sold-out">Sold out</span>';
   }
 }
-
-/**
- * Hook into booking form submit button so we can add out own classes
- */
-function mnm_kayla_em_booking_form_buttons($input) {
-  die('POW!');
-  return '<input type="submit" class="em-booking-submit wt_button small white" value="Submit" />';
-}
-add_action('em_booking_form_buttons', 'mnm_kayla_em_booking_form_buttons', 10, 1);
