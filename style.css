@@ -21,6 +21,10 @@
   color: #e24848;
 }
 
+div.pp_overlay {
+  background: transparent;
+}
+
 
 /************ EVENTS LIST *************/
 .mnm-events-list {
@@ -82,4 +86,35 @@ body.single-event .em-booking-form-details input.input,
 body.single-event .em-booking-form-details textarea,
 body.single-event select {
   width: 235px;
+}
+
+
+body.single-event div.em-booking-login {
+  padding: 0;
+  margin: 0;
+  border-left: none;
+}
+
+body.single-event .modal-inner {
+  background: #333;
+  padding: 10px;
+}
+
+body.single-event .framed_alt_box.login_form {
+  border-style: solid;
+  border-top-color: #222222;
+  border-top-width: 1px;
+  border-bottom-color: #222222;
+  border-bottom-width: 1px;
+  border-left-color: #73a128;
+  border-left-width: 1px;
+  border-right-color: #222222;
+  border-right-width: 1px;
+  background-color: #262626;
+  padding: 10px;
+}
+
+body.single-event .em-booking-login-form label,
+body.single-event .em-booking-login-form input {
+  display: inline-block;
 }
