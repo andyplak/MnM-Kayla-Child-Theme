@@ -99,7 +99,8 @@ if ( $events_count > 0 ) {
 			</td>
 			<td>
 			<?php if( mnm_is_speed_dating_event( $EM_Event ) ) : ?>
-				<?php echo $EM_Event->event_attributes['Age Range'] ?>
+				♂ <?php echo $EM_Event->event_attributes['Male Age Range'] ?><br />
+				♀ <?php echo $EM_Event->event_attributes['Female Age Range'] ?><br />
 			<?php endif; ?>
 			</td>
 			<td>
