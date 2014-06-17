@@ -55,7 +55,7 @@ ID, 'post_id' );
                   echo "Age: ".$EM_Event->event_attributes['Male Age Range'];
                 }
                 if( $EM_Ticket->ticket_name == 'Female' ) {
-                  echo "<h5>♀ Female</h5>";
+                  echo "<h5>♀ Women</h5>";
                   echo "Age: ".$EM_Event->event_attributes['Female Age Range'];
                 }
                 echo '<br />', mnm_kayla_show_ticket_availability( $EM_Ticket ), '</div>';
