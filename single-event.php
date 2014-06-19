@@ -122,6 +122,21 @@ ID, 'post_id' );
 
     <div class="clearfix"></div>
 
+      <div class="wt_title">
+        <h2>Similar Events like this</h2>
+      </div>
+
+      <?php
+        // Show events list for related events
+        // Initially just events for the same location. Later on, tie into region
+        $event_list_args = array('limit'=> 5);
+        if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
+          $event_list_args['location'] = $EM_Location->location_id;
+        }
+        echo em_get_events_list_shortcode( $event_list_args );
+      ?>
+
+
   <?php else: ?>
     <?php echo $EM_Event->output_single(); ?>
   <?php endif ?>
