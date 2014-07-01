@@ -56,7 +56,6 @@ if ( $events_count > 0 ) {
 			<th class="event-description">Event</th>
 			<th class="event-time">Date &amp; Time</th>
 			<th class="event-age">Age</th>
-			<th class="event-status">Status</th>
 			<th class="event-price">Price</th>
 			<th class="event-action"></th>
 		</tr>
@@ -69,7 +68,8 @@ if ( $events_count > 0 ) {
 				<?php if( has_post_thumbnail($EM_Event->ID) ) : ?>
 					<?php echo get_the_post_thumbnail( $EM_Event->ID, array(50, 50)); ?>
 				<?php endif ?>
-				<?php echo $EM_Event->event_name ?>
+				<strong><?php echo $EM_Event->event_name ?></strong><br />
+				<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
 			</td>
 	  		<td>
 	  			<i class="wt-icon-calendar"></i>
@@ -98,26 +98,20 @@ if ( $events_count > 0 ) {
 				?>
 			</td>
 			<td>
-			<?php if( mnm_is_speed_dating_event( $EM_Event ) ) : ?>
-				♂ <?php echo $EM_Event->event_attributes['Male Age Range'] ?><br />
-				♀ <?php echo $EM_Event->event_attributes['Female Age Range'] ?><br />
-			<?php endif; ?>
-			</td>
-			<td>
 			<?php if( mnm_is_speed_dating_event( $EM_Event ) ) {
 				foreach( $EM_Event->get_tickets()->tickets as $EM_Ticket) {
 					if( $EM_Ticket->ticket_name == 'Male' || $EM_Ticket->ticket_name == 'Female' ) {
 
-						if( $EM_Ticket->ticket_name == 'Male' ) {
-							echo "♂ ";
-						}
-						if( $EM_Ticket->ticket_name == 'Female' ) {
-							echo "♀ ";
-						}
-
 						$prices[ $EM_Ticket->ticket_name ] = $EM_Ticket->get_price(true);
 
-						echo mnm_kayla_show_ticket_availability( $EM_Ticket );
+						if( $EM_Ticket->ticket_name == 'Male' ) {
+							echo '<i class="mnm-icon male"></i>'.$EM_Event->event_attributes['Male Age Range'];
+						}
+						if( $EM_Ticket->ticket_name == 'Female' ) {
+							echo '<i class="mnm-icon female"></i>'. $EM_Event->event_attributes['Female Age Range'];
+						}
+
+						echo '&nbsp;&nbsp;'.mnm_kayla_show_ticket_availability( $EM_Ticket );
 					}
 					echo '<br />';
 				}

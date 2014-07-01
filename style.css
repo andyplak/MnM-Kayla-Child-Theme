@@ -7,6 +7,8 @@
  Version:        1.0
 */
 
+/*********** SITE WIDE ***********/
+
 @import url("../kayla/style.css");
 
 .spaces-avail {
@@ -25,6 +27,26 @@ div.pp_overlay {
   background: transparent;
 }
 
+i.mnm-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 1;
+  background-image: url(images/male-female.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+
+i.mnm-icon.male {
+  background-position: -5px 0;
+}
+
+i.mnm-icon.female {
+  background-position: -5px -15px;
+}
 
 /************ EVENTS LIST *************/
 .mnm-events-list {
@@ -32,19 +54,15 @@ div.pp_overlay {
 }
 
 .mnm-events-list .event-description {
-  width: 160px;
+  min-width: 160px;
 }
 
 .mnm-events-list .event-time {
-  width: 160px;
+  min-width: 150px;
 }
 
 .mnm-events-list .event-age {
-  width: 45px;
-}
-
-.mnm-events-list .event-status {
-  width: 100px;
+  min-width: 140px;
 }
 
 /*
