@@ -54,9 +54,11 @@
 
         <?php if( $attachments->exist() ) : ?>
 
-          <div class="main-image">
-            <img src="<?php echo $attachments->url( 0 ); ?>" alt="<?php echo $attachments->field( 'title', 0 ); ?>" class="custom image-responsive">
-          </div>
+          <span class="image_frame styled_image">
+            <span class="image_holder" style="background-image: none;">
+              <a class="no_link"><img src="<?php echo $attachments->url( 0 ); ?>" alt="<?php echo $attachments->field( 'title', 0 ); ?>" class="custom" style="visibility: visible; opacity: 1;"></a>
+            </span>
+          </span>
 
           <div class="thumb-container hidden-xs">
             <ul class="thumbnails">
