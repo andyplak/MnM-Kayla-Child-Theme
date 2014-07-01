@@ -48,6 +48,14 @@ i.mnm-icon.female {
   background-position: -5px -15px;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pad-10 {
+  padding: 10px;
+}
+
 /************ EVENTS LIST *************/
 .mnm-events-list {
   font-size: 0.8em;
@@ -147,6 +155,44 @@ body.single-event .framed_alt_box.login_form {
 body.single-event .em-booking-login-form label,
 body.single-event .em-booking-login-form input {
   display: inline-block;
+}
+
+
+/************* Single Location *************/
+
+body.single-location header .inner {
+  width: 1000px !important;
+  padding: 0 !important;
+}
+
+body.single-location .breadcrumbs {
+  float: right;
+}
+
+body.single-location .location-image {
+  display: inline-block;
+  vertical-align:middle;
+  width: 64%;
+  height: 175px;
+}
+
+body.single-location .location-map {
+  display: inline-block;
+  vertical-align:middle;
+  width: 35%;
+}
+
+
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  body.single-location header .inner {
+    width: 768px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body.single-location header .inner {
+    width: 100% !important;
+  }
 }
 
 

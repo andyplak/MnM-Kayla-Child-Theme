@@ -69,7 +69,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
           <div class="framed_box_content clearfix">
             <h5>
               <i class="wt-icon-map-marker"></i>
-              <?php echo $EM_Event->event_attributes['Region'] ?>
+              <?php echo $EM_Event->event_attributes['Region'] ?>             
             </h5>
 
             <div class="three_fifth">
