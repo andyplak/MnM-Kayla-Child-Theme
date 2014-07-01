@@ -4,8 +4,7 @@
  * as described here - http://codex.wordpress.org/Post_Types#Template_Files
  */
 global $post;
-$EM_Event = em_get_event( $post->
-ID, 'post_id' );
+$EM_Event = em_get_event( $post->ID, 'post_id' );
 ?>
 <?php get_header(); ?>
 <?php theme_generator('custom_header',$post->ID); ?></div>
