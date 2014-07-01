@@ -53,18 +53,29 @@ i.mnm-icon.female {
   font-size: 0.8em;
 }
 
-
 .mnm-events-list .event-desc img {
   float: left;
   margin-right: 4px;
 }
 
-.mnm-events-list a.wt_button {
-  width: 75px;
-  margin: 0;
+.mnm-events-list .wt_button.small span {
+  padding: 0 5px;
+  height: inherit;
+  line-height: inherit;
+  /* font-size: inherit; */
 }
 
-@media all (min-width: 768px) {
+.mnm-events-list a.wt_button .hide-sm {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+
+  .mnm-events-list a.wt_button {
+    width: 75px;
+    margin: 0;
+  }
+
   .mnm-events-list .event-description {
     min-width: 160px;
   }
@@ -82,6 +93,15 @@ i.mnm-icon.female {
     width: 80px;
   }
   */
+
+  .mnm-events-list a.wt_button .show-sm {
+    display: none;
+  }
+
+  .mnm-events-list a.wt_button .hide-sm {
+    display: block;
+  }
+
 }
 
 
