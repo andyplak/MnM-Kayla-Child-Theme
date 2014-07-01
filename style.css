@@ -182,6 +182,35 @@ body.single-location .location-map {
   width: 35%;
 }
 
+.location-gallery .thumb-container {
+  text-align: center;
+}
+
+.location-gallery ul.thumbnails {
+  display: inline-block;
+  list-style: none;
+  padding: 0px;
+}
+
+.location-gallery ul.thumbnails li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  float: left;
+  margin-right: 15px;
+  position: relative;
+  width: 100px;
+  height: 75px;
+}
+
+.location-gallery ul.thumbnails li img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 
 @media only screen and (max-width: 959px) and (min-width: 768px) {
   body.single-location header .inner {

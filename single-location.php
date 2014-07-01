@@ -48,8 +48,25 @@
         <?php echo $EM_Location->output('#_LOCATIONNOTES') ?>
       </div>
 
-      <div class="three_fifth last">
-        Gallery
+      <div class="three_fifth last location-gallery">
+
+        <?php $attachments = new Attachments( 'mnm_location_gallery', $product->ID ); ?>
+
+        <?php if( $attachments->exist() ) : ?>
+
+          <div class="main-image">
+            <img src="<?php echo $attachments->url( 0 ); ?>" alt="<?php echo $attachments->field( 'title', 0 ); ?>" class="custom image-responsive">
+          </div>
+
+          <div class="thumb-container hidden-xs">
+            <ul class="thumbnails">
+            <?php while( $attachments->get() ) : ?>
+              <li><a href="<?php echo $attachments->url(); ?>"><img src="<?php echo $attachments->url(); ?>" /></a></li>
+            <?php endwhile; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+
       </div>
 
       <div class="clearfix"></div>
