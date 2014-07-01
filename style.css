@@ -163,6 +163,6 @@ body.single-event .em-booking-login-form input {
   }
 
   .hide-sm {
-    display: block !important;
+    display: inline-block !important;
   }
 }

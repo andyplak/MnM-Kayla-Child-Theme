@@ -72,7 +72,7 @@ if ( $events_count > 0 ) {
 				<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
 			</td>
 	  		<td>
-	  			<i class="wt-icon-calendar"></i>
+	  			<i class="wt-icon-calendar hide-sm"></i>
 				<?php
 					//$date_format = ( get_option('dbem_date_format') ) ? get_option('dbem_date_format'):get_option('date_format');
 					$date_format = 'l jS \o\f F';
@@ -83,7 +83,7 @@ if ( $events_count > 0 ) {
 					}
 				?>
 				<br/>
-				<i class="wt-icon-time"></i>
+				<i class="wt-icon-time hide-sm"></i>
 				<?php
 					if( !$EM_Event->event_all_day ){
 						$time_format = ( get_option('dbem_time_format') ) ? get_option('dbem_time_format'):get_option('time_format');
