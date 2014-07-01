@@ -102,11 +102,13 @@ i.mnm-icon.female {
 
 
 /************** SINGLE EVENTS PAGE ******************/
-body.single-event .framed_box_title {
+body.single-event .framed_box_title,
+body.single-location .framed_box_title {
   background-color: #222222;
 }
 
-body.single-event .framed_box_content {
+body.single-event .framed_box_content,
+body.single-location .framed_box_content {
   padding: 10px;
 }
 
