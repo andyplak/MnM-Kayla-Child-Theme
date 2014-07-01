@@ -53,23 +53,6 @@ i.mnm-icon.female {
   font-size: 0.8em;
 }
 
-.mnm-events-list .event-description {
-  min-width: 160px;
-}
-
-.mnm-events-list .event-time {
-  min-width: 150px;
-}
-
-.mnm-events-list .event-age {
-  min-width: 140px;
-}
-
-/*
-.mnm-events-list .event-action {
-  width: 80px;
-}
-*/
 
 .mnm-events-list .event-desc img {
   float: left;
@@ -80,6 +63,28 @@ i.mnm-icon.female {
   width: 75px;
   margin: 0;
 }
+
+@media all (min-width: 768px) {
+  .mnm-events-list .event-description {
+    min-width: 160px;
+  }
+
+  .mnm-events-list .event-time {
+    min-width: 150px;
+  }
+
+  .mnm-events-list .event-age {
+    min-width: 140px;
+  }
+
+  /*
+  .mnm-events-list .event-action {
+    width: 80px;
+  }
+  */
+}
+
+
 
 /************** SINGLE EVENTS PAGE ******************/
 body.single-event .framed_box_title {
