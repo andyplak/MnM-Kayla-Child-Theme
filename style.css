@@ -172,10 +172,22 @@ body.single-location .breadcrumbs {
 }
 
 body.single-location .location-image {
+  background-repeat: no-repeat;
+  background-size: cover;
   display: inline-block;
   vertical-align:middle;
   width: 64%;
   height: 175px;
+  position: relative;
+}
+
+body.single-location .location-image h1 {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  margin: 0;
+  font-style: italic;
+  font-size: 28px;
 }
 
 body.single-location .location-map {

@@ -6,7 +6,7 @@
   $ftrd_img_src = "";
   if ( function_exists('has_post_thumbnail') && has_post_thumbnail($post->ID) ) {
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), full );
-    $ftrd_img_css = "background: url(".$thumbnail[0].") no-repeat";
+    $ftrd_img_css = "background-image: url(".$thumbnail[0].")";
   }
 ?>
 <?php get_header(); ?>
@@ -16,7 +16,7 @@
     <div class="inner">
       <!--<div id="introType"> -->
       <div class="location-image" style="<?php echo $ftrd_img_css ?>">
-        <h1><?php echo $EM_Location->output('#_LOCATIONNAME') ?></h1>
+        <h1><?php echo $EM_Location->output('#_LOCATIONNAME') ?> <?php echo $EM_Location->output('#_LOCATIONTOWN') ?></h1>
       </div>
 
       <div class="location-map">
