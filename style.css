@@ -184,6 +184,10 @@ body.single-location .location-map {
   width: 35%;
 }
 
+body.single-location #wt_content {
+  padding: 10px 10px 50px;
+}
+
 .location-gallery .thumb-container {
   text-align: center;
 }
