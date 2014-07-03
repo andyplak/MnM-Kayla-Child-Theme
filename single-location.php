@@ -118,7 +118,7 @@
         );
         echo em_get_events_list_shortcode( $event_list_args );
       ?>
-        <a class="pull-right pad-10" href="#">See more events >></a>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/events">See more events >></a>
         <div class="clearfix"></div>
       </div>
     </div>
