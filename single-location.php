@@ -46,6 +46,10 @@
     <div class="three_fourth">
       <div class="two_fifth">
         <?php echo $EM_Location->output('#_LOCATIONNOTES') ?>
+
+        <?php if( $EM_Location->output('#_LATT{WEBSITE}') != '' ) : ?>
+          <a class="pull-right" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website >></a>
+        <?php endif; ?>
       </div>
 
       <div class="three_fifth last location-gallery">
