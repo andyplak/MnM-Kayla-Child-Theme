@@ -211,13 +211,11 @@ body.single-location #wt_content {
 }
 
 .location-gallery ul.thumbnails li {
-  background-color: #fff;
-  border: 1px solid #ccc;
   float: left;
-  margin-right: 15px;
+  margin-right: 10px;
   position: relative;
-  width: 100px;
-  height: 75px;
+  width: 70px;
+  height: 60px;
 }
 
 .location-gallery ul.thumbnails li img {
