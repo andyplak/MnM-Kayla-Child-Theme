@@ -85,7 +85,15 @@
             <?php echo $EM_Location->output('#_LOCATIONTOWN') ?><br />
             <?php echo $EM_Location->output('#_LOCATIONREGION') ?>,
             <?php echo $EM_Location->output('#_LOCATIONPOSTCODE') ?><br />
-            <?php echo $EM_Location->output('#_LOCATIONCOUNTRY') ?>
+            <?php echo $EM_Location->output('#_LOCATIONCOUNTRY') ?><br />
+
+            <?php
+              $directions_url = "http://maps.google.com.au/maps?daddr=";
+              $directions_url.= $EM_Location->output('#_LOCATIONADDRESS').',+';
+              $directions_url.= $EM_Location->output('#_LOCATIONTOWN').',+';
+              $directions_url.= $EM_Location->output('#_LOCATIONPOSTCODE');
+            ?>
+            <a class="pull-right" target="_new" href="<?php echo $directions_url ?>">Driving directions >></a>
           </p>
 
           <h5><i class="wt-icon-circle-arrow-down"></i> Parking</h5>
