@@ -110,7 +110,7 @@
 
       <div class="framed_box rounded">
         <h6 class="framed_box_title">Upcoming Events</h6>
-        
+
       <?php
         $event_list_args = array(
           'limit'=> 5,
@@ -128,6 +128,31 @@
         <h6 class="framed_box_title">Locations Nearby</h6>
         <div class="framed_box_content clearfix">
 
+        <?php
+          // Load all locations
+          $locations = EM_Locations::get();
+
+          // Loop through, check if region matches
+          foreach( $locations as $location ) {
+            if(
+              $location->location_attributes['Region'] == $EM_Location->location_attributes['Region']
+              && $location->location_id != $EM_Location->location_id )
+            {
+              ?>
+              <strong><a href="<?php echo get_site_url() ?>/locations/<?php echo $location->location_slug ?>">
+                <?php echo $location->location_name ?></a>
+              </strong><br />
+              <?php echo ( $location->output('#_LOCATIONNAME') != "" ? $location->output('#_LOCATIONNAME') .',' : "" ) ?>
+              <?php echo ( $location->output('#_LOCATIONADDRESS') != "" ? $location->output('#_LOCATIONADDRESS') .',' : "" ) ?>
+              <?php echo ( $location->output('#_LOCATIONTOWN') != "" ? $location->output('#_LOCATIONTOWN') .',' : "" ) ?>
+              <?php echo ( $location->output('#_LOCATIONREGION') != "" ? $location->output('#_LOCATIONREGION') .',' : "" ) ?>
+              <?php echo ( $location->output('#_LOCATIONPOSTCODE') != "" ? $location->output('#_LOCATIONPOSTCODE') .',' : "" ) ?>
+              <?php echo ( $location->output('#_LOCATIONCOUNTRY') != "" ? $location->output('#_LOCATIONCOUNTRY') : "" ) ?>
+              <?php
+            }
+          }
+        ?>
+          <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations >></a>
         </div>
       </div>
     </div>
