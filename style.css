@@ -67,12 +67,13 @@ i.mnm-icon.female {
 
 .mnm-events-list .event-desc img {
   position: absolute;
-  top: 13px;
+  top: 11px;
   left: 8px;
 }
 
 .mnm-events-list .event-desc div {
   padding-left: 58px;
+  min-height: 55px;
 }
 
 .mnm-events-list .wt_button.small span {
