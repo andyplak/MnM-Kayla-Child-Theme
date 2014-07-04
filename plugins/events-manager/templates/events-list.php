@@ -66,7 +66,7 @@ if ( $events_count > 0 ) {
 		<tr>
 			<td class="event-desc">
 				<div>
-					<strong><?php echo $EM_Event->event_name ?></strong><br />
+					<a  href="<?php echo $EM_Event->get_permalink() ?>"><?php echo $EM_Event->event_name ?></a><br />
 					<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
 				</div>
 				<?php if( has_post_thumbnail($EM_Event->ID) ) : ?>
