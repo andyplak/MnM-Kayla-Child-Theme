@@ -65,11 +65,13 @@ if ( $events_count > 0 ) {
 	<?php foreach ( $events as $EM_Event ) : ?>
 		<tr>
 			<td class="event-desc">
+				<div>
+					<strong><?php echo $EM_Event->event_name ?></strong><br />
+					<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
+				</div>
 				<?php if( has_post_thumbnail($EM_Event->ID) ) : ?>
 					<?php echo get_the_post_thumbnail( $EM_Event->ID, array(50, 50)); ?>
 				<?php endif ?>
-				<strong><?php echo $EM_Event->event_name ?></strong><br />
-				<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
 			</td>
 	  		<td>
 	  			<i class="wt-icon-calendar hide-sm"></i>

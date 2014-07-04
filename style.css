@@ -61,9 +61,18 @@ i.mnm-icon.female {
   font-size: 0.8em;
 }
 
+.mnm-events-list .event-desc {
+  position: relative;
+}
+
 .mnm-events-list .event-desc img {
-  float: left;
-  margin-right: 4px;
+  position: absolute;
+  top: 13px;
+  left: 8px;
+}
+
+.mnm-events-list .event-desc div {
+  padding-left: 58px;
 }
 
 .mnm-events-list .wt_button.small span {
