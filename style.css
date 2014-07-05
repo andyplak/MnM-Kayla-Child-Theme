@@ -210,6 +210,11 @@ body.single-location #wt_content {
   padding: 10px 10px 50px;
 }
 
+
+body.single-location .mnm-events-list {
+  margin-bottom: 0;
+}
+
 .location-gallery .thumb-container {
   text-align: center;
 }

@@ -48,7 +48,7 @@
         <?php echo $EM_Location->output('#_LOCATIONNOTES') ?>
 
         <?php if( $EM_Location->output('#_LATT{WEBSITE}') != '' ) : ?>
-          <a class="pull-right" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website >></a>
+          <a class="pull-right" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website</a>
         <?php endif; ?>
       </div>
 
@@ -86,10 +86,9 @@
           <p>
             <?php echo ( $EM_Location->output('#_LOCATIONNAME') != "" ? $EM_Location->output('#_LOCATIONNAME') .'<br />' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONADDRESS') != "" ? $EM_Location->output('#_LOCATIONADDRESS') .'<br />' : "" ) ?>
-            <?php echo ( $EM_Location->output('#_LOCATIONTOWN') != "" ? $EM_Location->output('#_LOCATIONTOWN') .'<br />' : "" ) ?>
+            <?php echo ( $EM_Location->output('#_LOCATIONTOWN') != "" ? $EM_Location->output('#_LOCATIONTOWN') .',' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONREGION') != "" ? $EM_Location->output('#_LOCATIONREGION') .',' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONPOSTCODE') != "" ? $EM_Location->output('#_LOCATIONPOSTCODE') .'<br />' : "" ) ?>
-            <?php echo ( $EM_Location->output('#_LOCATIONCOUNTRY') != "" ? $EM_Location->output('#_LOCATIONCOUNTRY') .'<br />' : "" ) ?>
 
             <?php
               $directions_url = "http://maps.google.com.au/maps?daddr=";
@@ -97,7 +96,7 @@
               $directions_url.= $EM_Location->output('#_LOCATIONTOWN').',+';
               $directions_url.= $EM_Location->output('#_LOCATIONPOSTCODE');
             ?>
-            <a class="pull-right" target="_new" href="<?php echo $directions_url ?>">Driving directions >></a>
+            <a class="pull-right" target="_new" href="<?php echo $directions_url ?>">Get Driving directions</a>
           </p>
 
           <h5><i class="wt-icon-circle-arrow-down"></i> Parking</h5>
@@ -118,7 +117,7 @@
         );
         echo em_get_events_list_shortcode( $event_list_args );
       ?>
-        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events >></a>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events</a>
         <div class="clearfix"></div>
       </div>
     </div>
@@ -152,7 +151,7 @@
             }
           }
         ?>
-          <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations >></a>
+          <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations</a>
         </div>
       </div>
     </div>
