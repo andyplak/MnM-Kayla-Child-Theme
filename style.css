@@ -90,6 +90,11 @@ i.mnm-icon.female {
     margin: 0;
   }
 
+}
+
+
+@media only screen and (min-width: 959px) {
+
   .mnm-events-list .event-description {
     min-width: 160px;
   }
@@ -107,7 +112,6 @@ i.mnm-icon.female {
     width: 80px;
   }
   */
-
 }
 
 
@@ -264,12 +268,22 @@ body.single-location .mnm-events-list {
   display: none !important;
 }
 
+.hide-md {
+  display: none !important;
+}
+
 @media all and (min-width: 768px) {
   .show-sm {
     display: none !important;
   }
 
   .hide-sm {
+    display: inline-block !important;
+  }
+}
+
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  .show-md {
     display: inline-block !important;
   }
 }

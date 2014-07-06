@@ -112,8 +112,8 @@ if ( $events_count > 0 ) {
 						if( $EM_Ticket->ticket_name == 'Female' ) {
 							echo '<i class="mnm-icon female"></i>'. $EM_Event->event_attributes['Female Age Range'];
 						}
-
-						echo '&nbsp;&nbsp;'.mnm_kayla_show_ticket_availability( $EM_Ticket );
+						echo '&nbsp;&nbsp;<br class="show-sm show-md" />';
+						echo mnm_kayla_show_ticket_availability( $EM_Ticket );
 					}
 					echo '<br />';
 				}
