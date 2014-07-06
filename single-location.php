@@ -85,7 +85,7 @@
           <h5><i class="wt-icon-map-marker"></i> Address</h5>
           <p>
             <?php echo ( $EM_Location->output('#_LOCATIONNAME') != "" ? $EM_Location->output('#_LOCATIONNAME') .'<br />' : "" ) ?>
-            <?php echo ( $EM_Location->output('#_LOCATIONADDRESS') != "" ? $EM_Location->output('#_LOCATIONADDRESS') .'<br />' : "" ) ?>
+            <?php echo ( $EM_Location->output('#_LOCATIONADDRESS') != "" ? $EM_Location->output('#_LOCATIONADDRESS') .',<br class="hide-sm" />' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONTOWN') != "" ? $EM_Location->output('#_LOCATIONTOWN') .',' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONREGION') != "" ? $EM_Location->output('#_LOCATIONREGION') .',' : "" ) ?>
             <?php echo ( $EM_Location->output('#_LOCATIONPOSTCODE') != "" ? $EM_Location->output('#_LOCATIONPOSTCODE') .'<br />' : "" ) ?>
@@ -141,7 +141,6 @@
               <strong><a href="<?php echo get_site_url() ?>/locations/<?php echo $location->location_slug ?>">
                 <?php echo $location->location_name ?></a>
               </strong><br />
-              <?php echo ( $location->output('#_LOCATIONNAME') != "" ? $location->output('#_LOCATIONNAME') .',' : "" ) ?>
               <?php echo ( $location->output('#_LOCATIONADDRESS') != "" ? $location->output('#_LOCATIONADDRESS') .',' : "" ) ?>
               <?php echo ( $location->output('#_LOCATIONTOWN') != "" ? $location->output('#_LOCATIONTOWN') .',' : "" ) ?>
               <?php echo ( $location->output('#_LOCATIONREGION') != "" ? $location->output('#_LOCATIONREGION') .',' : "" ) ?>
