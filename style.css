@@ -61,21 +61,6 @@ i.mnm-icon.female {
   font-size: 0.8em;
 }
 
-.mnm-events-list .event-desc {
-  position: relative;
-}
-
-.mnm-events-list .event-desc img {
-  position: absolute;
-  top: 11px;
-  left: 8px;
-}
-
-.mnm-events-list .event-desc div {
-  padding-left: 58px;
-  min-height: 55px;
-}
-
 .mnm-events-list .wt_button.small span {
   padding: 0 5px;
   height: inherit;
@@ -83,6 +68,22 @@ i.mnm-icon.female {
 }
 
 @media all and (min-width: 768px) {
+
+  .mnm-events-list .event-desc {
+    position: relative;
+  }
+
+  .mnm-events-list .event-desc img {
+    position: absolute;
+    top: 11px;
+    left: 8px;
+  }
+
+  .mnm-events-list .event-desc div {
+    padding-left: 58px;
+    min-height: 55px;
+  }
+
 
   .mnm-events-list a.wt_button {
     width: 75px;
