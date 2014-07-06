@@ -76,6 +76,21 @@
       </div>
 
       <div class="clearfix"></div>
+
+      <div class="framed_box rounded">
+        <h6 class="framed_box_title">Upcoming Events</h6>
+
+      <?php
+        $event_list_args = array(
+          'limit'=> 5,
+          'location' => $EM_Location->location_id
+        );
+        echo em_get_events_list_shortcode( $event_list_args );
+      ?>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events</a>
+        <div class="clearfix"></div>
+      </div>
+
     </div>
 
     <div class="one_fourth last">
@@ -103,26 +118,7 @@
           <p><?php echo $EM_Location->output('#_LATT{Parking}') ?></p>
         </div>
       </div>
-    </div>
 
-    <div class="three_fourth">
-
-      <div class="framed_box rounded">
-        <h6 class="framed_box_title">Upcoming Events</h6>
-
-      <?php
-        $event_list_args = array(
-          'limit'=> 5,
-          'location' => $EM_Location->location_id
-        );
-        echo em_get_events_list_shortcode( $event_list_args );
-      ?>
-        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events</a>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-
-    <div class="one_fourth last">
       <div class="framed_box rounded">
         <h6 class="framed_box_title">Locations Nearby</h6>
         <div class="framed_box_content clearfix">
@@ -153,11 +149,8 @@
           <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations</a>
         </div>
       </div>
+
     </div>
-
-
-    <?php //echo  $EM_Location->output_single(); ?>
-
 
   <!-- End wt_content -->
 </div>
