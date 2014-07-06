@@ -203,6 +203,7 @@ body.single-location .location-image h1 {
   margin: 0;
   font-style: italic;
   font-size: 28px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
 }
 
 body.single-location .location-map {
