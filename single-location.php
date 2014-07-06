@@ -54,23 +54,25 @@
 
       <div class="three_fifth last location-gallery">
 
+
         <?php $attachments = new Attachments( 'mnm_location_gallery', $product->ID ); ?>
 
         <?php if( $attachments->exist() ) : ?>
 
-          <span class="image_frame styled_image">
-            <span class="image_holder" style="background-image: none;">
-              <a class="no_link"><img src="<?php echo $attachments->url( 0 ); ?>" alt="<?php echo $attachments->field( 'title', 0 ); ?>" class="custom" style="visibility: visible; opacity: 1;"></a>
+          <div class="image_frame styled_image">
+            <span class="">
+              <a data-rel="lightbox" class="overlay_zoom" title="<?php echo $attachments->field( 'title', 0 ); ?>" href="<?php echo $attachments->url( 0 ); ?>">
+                <img class="custom" alt="<?php echo $attachments->field( 'title', 0 ); ?>" src="<?php echo $attachments->url( 0 ); ?>" />
+              </a>
             </span>
-          </span>
-
-          <div class="thumb-container hidden-xs">
-            <ul class="thumbnails">
-            <?php while( $attachments->get() ) : ?>
-              <li><a href="<?php echo $attachments->url(); ?>"><img src="<?php echo $attachments->url(); ?>" /></a></li>
-            <?php endwhile; ?>
-            </ul>
           </div>
+
+          <ul class="thumbnails">
+          <?php while( $attachments->get() ) : ?>
+            <li><a href="<?php echo $attachments->url(); ?>" data-title="<?php echo $attachments->field( 'title' ); ?>"><?php echo $attachments->image('thumbnail'); ?></a></li>
+          <?php endwhile; ?>
+          </ul>
+
         <?php endif; ?>
 
       </div>

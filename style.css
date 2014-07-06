@@ -220,21 +220,26 @@ body.single-location .mnm-events-list {
   margin-bottom: 0;
 }
 
-.location-gallery .thumb-container {
-  text-align: center;
+.location-gallery .styled_image {
+  margin-bottom: 5px;
+}
+
+.location-gallery .image_frame {
+  padding: 0;
 }
 
 .location-gallery ul.thumbnails {
   display: inline-block;
   list-style: none;
   padding: 0px;
+  margin-left: 0;
 }
 
 .location-gallery ul.thumbnails li {
   float: left;
-  margin-right: 10px;
+  margin-right: 4px;
   position: relative;
-  width: 70px;
+  width: 60px;
   height: 60px;
 }
 
