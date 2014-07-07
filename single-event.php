@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
  * Override EM default events display. Done at WP theme level where we override the single event page completely 
  * as described here - http://codex.wordpress.org/Post_Types#Template_Files
  */
@@ -25,21 +25,19 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
       <div class="two_fifth">
 
         <div class="framed_box rounded">
-          <h6 class="framed_box_title">Date &amp Time</h6>
+          <h6 class="framed_box_title">Date &amp; Time</h6>
           <div class="framed_box_content clearfix">
             <p>
               <i class="wt-icon-calendar"></i>
-              <strong>
               <?php echo $EM_Event->output('#_EVENTDATES') ?>
-              <?php //$date_format = 'l jS \o\f F'; ?>
-              </strong>
               <br/>
+              <i class="wt-icon-time"></i>
               <?php echo $EM_Event->output('#_EVENTTIMES') ?>
             </p>
           </div>
         </div>
 
-        <div class="framed_box rounded">
+        <div class="framed_box rounded participants">
           <h6 class="framed_box_title">Participants</h6>
           <div class="framed_box_content clearfix">
             <?php
@@ -64,30 +62,27 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
           </div>
         </div>
 
+      <?php if( !is_null( $EM_Location = $EM_Event->get_location() ) ) : ?>
         <div class="framed_box rounded">
           <h6 class="framed_box_title">Location</h6>
           <div class="framed_box_content clearfix">
             <h5>
               <i class="wt-icon-map-marker"></i>
-              <?php echo $EM_Event->event_attributes['Region'] ?>             
+              <?php echo $EM_Location->location_attributes['Region'] ?>
             </h5>
 
-            <div class="three_fifth">
-              <?php if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
-                echo ( isset($EM_Location->location_name) ? $EM_Location->location_name.'<br />' : '');
-                echo ( isset($EM_Location->location_address) ? $EM_Location->location_address.'<br />' : '');
-                echo ( isset($EM_Location->location_town) ? $EM_Location->location_town.'<br />' : '');
-                echo ( isset($EM_Location->location_postcode) ? $EM_Location->location_postcode.'<br />' : '');
-              } ?>
-            </div>
+            <?php
+              echo ( isset($EM_Location->location_name) ? $EM_Location->location_name.'<br />' : '');
+              echo ( isset($EM_Location->location_address) ? $EM_Location->location_address.',<br class="hide-sm" /> ' : '');
+              echo ( isset($EM_Location->location_town) ? $EM_Location->location_town.', ' : '');
+              echo ( isset($EM_Location->location_postcode) ? $EM_Location->location_postcode.'<br />' : '');
+            ?>
 
-            <div class="two_fifth last">
-              <a class="wt_button black small full" href="<?php echo $EM_Location->get_permalink() ?>"><span>More details</span></a>
-            </div>
+            <a class="pull-right pad-10" href="<?php echo $EM_Location->get_permalink() ?>">More details</a>
 
-            <div class="clearboth"></div>
           </div>
         </div>
+      <?php endif; ?>
 
       </div>
 
@@ -121,19 +116,21 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
     <div class="clearfix"></div>
 
-      <div class="wt_title">
-        <h2>Similar Events like this</h2>
-      </div>
+      <div class="framed_box rounded">
+        <h6 class="framed_box_title">Similar Events like this</h6>
 
-      <?php
-        // Show events list for related events
-        // Initially just events for the same location. Later on, tie into region
-        $event_list_args = array('limit'=> 5);
-        if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
-          $event_list_args['location'] = $EM_Location->location_id;
-        }
-        echo em_get_events_list_shortcode( $event_list_args );
-      ?>
+        <?php
+          // Show events list for related events
+          // Initially just events for the same location. Later on, tie into region
+          $event_list_args = array('limit'=> 5);
+          if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
+            $event_list_args['location'] = $EM_Location->location_id;
+          }
+          echo em_get_events_list_shortcode( $event_list_args );
+        ?>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events</a>
+        <div class="clearfix"></div>
+      </div>
 
 
   <?php else: ?>
