@@ -66,7 +66,7 @@ if ( $events_count > 0 ) {
 		<tr>
 			<td class="event-desc">
 				<div>
-					<a href="<?php echo $EM_Event->get_permalink() ?>"><?php echo $EM_Event->event_name ?></a><br />
+					<a href="<?php echo $EM_Event->get_permalink() ?>"><?php echo $EM_Event->event_name ?></a>
 					<?php echo $EM_Event->get_location()->location_attributes['Region'] ?>
 				</div>
 				<?php if( has_post_thumbnail($EM_Event->ID) ) : ?>
@@ -77,7 +77,7 @@ if ( $events_count > 0 ) {
 	  			<i class="wt-icon-calendar hide-sm"></i>
 				<?php
 					//$date_format = ( get_option('dbem_date_format') ) ? get_option('dbem_date_format'):get_option('date_format');
-					$date_format = 'l jS \o\f F';
+					$date_format = 'd/m/Y';
 					if( $EM_Event->event_start_date != $EM_Event->event_end_date){
 						echo date_i18n($date_format, $EM_Event->start). get_option('dbem_dates_separator') . date_i18n($date_format, $EM_Event->end);
 					}else{
@@ -90,7 +90,7 @@ if ( $events_count > 0 ) {
 					if( !$EM_Event->event_all_day ){
 						$time_format = ( get_option('dbem_time_format') ) ? get_option('dbem_time_format'):get_option('time_format');
 						if($EM_Event->event_start_time != $EM_Event->event_end_time ){
-							echo date_i18n($time_format, $EM_Event->start). get_option('dbem_times_separator') . date_i18n($time_format, $EM_Event->end);
+							echo date_i18n($time_format, $EM_Event->start). ' - ' . date_i18n($time_format, $EM_Event->end);
 						}else{
 							echo date_i18n($time_format, $EM_Event->start);
 						}
@@ -129,10 +129,9 @@ if ( $events_count > 0 ) {
 				<?php endif; ?>
 			<?php endif ?>
 			</td>
-			<td>
+			<td class="event-action">
 				<a class="wt_button marine small full" href="<?php echo $EM_Event->get_permalink() ?>">
-					<span class="hide-sm">More details</span>
-					<span class="show-sm">More</span>
+					<span>More details</span>
 				</a>
 			</td>
 		</tr>

@@ -67,6 +67,11 @@ i.mnm-icon.female {
   line-height: inherit;
 }
 
+.mnm-events-list .event-desc a {
+  display: block;
+  margin-bottom: 7px;
+}
+
 @media all and (min-width: 768px) {
 
   .mnm-events-list .event-desc {
@@ -114,6 +119,11 @@ i.mnm-icon.female {
   */
 }
 
+@media only screen and (max-width: 958px) {
+  table.mnm-events-list .event-action {
+    display: none;
+  }
+}
 
 
 /************** SINGLE EVENTS PAGE ******************/
