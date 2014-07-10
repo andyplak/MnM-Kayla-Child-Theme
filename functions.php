@@ -36,7 +36,7 @@ function mnm_kayla_breadcrumbs_plus( $breadcrumbs ) {
   if( function_exists( 'em_init' ) ) {
 
     if ( get_option('show_on_front') == 'page' &&
-      (em_is_event_page() || em_is_locations_page() || em_is_location_page() ) ) {
+      (em_is_event_page() ||  em_is_location_page() ) ) {
       // If site does not have blog as homepage, breadcrumbs-plus will add current page as the second
       // link as it is EM unaware, so strip that out here.
       $pos = strpos($breadcrumbs, '</span>');
