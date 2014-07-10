@@ -24,15 +24,21 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
       <div class="two_fifth">
 
-        <div class="framed_box rounded">
+        <div class="framed_box rounded date-n-time">
           <h6 class="framed_box_title">Date &amp; Time</h6>
           <div class="framed_box_content clearfix">
             <p>
-              <i class="wt-icon-calendar"></i>
-              <?php echo $EM_Event->output('#_EVENTDATES') ?>
-              <br/>
-              <i class="wt-icon-time"></i>
-              <?php echo $EM_Event->output('#_EVENTTIMES') ?>
+              <h5>
+                <i class="wt-icon-calendar"></i>
+                <?php echo $EM_Event->output('#_EVENTDATES') ?>
+              </h5>
+
+              from <?php echo $EM_Event->output('#_EVENTTIMES') ?>
+              <span class="tooltips">
+                <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="We advise you to come 30 min earlier">
+                  <i class="wt-icon-info-sign"></i>
+                </a>
+              </span>
             </p>
           </div>
         </div>

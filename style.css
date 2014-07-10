@@ -127,6 +127,14 @@ body.single-location .framed_box_content {
   padding: 10px;
 }
 
+body.single-event .date-n-time h5 {
+  margin-bottom: 0;
+}
+
+body.single-event .date-n-time .tooltip {
+  min-width: 100px;
+}
+
 body.single-event .framed_box.participants .one_half:not(.last) {
   border-right: 1px solid #3e3e3e;
   box-sizing: border-box;
