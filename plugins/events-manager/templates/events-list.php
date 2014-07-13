@@ -130,9 +130,7 @@ if ( $events_count > 0 ) {
 			<?php endif ?>
 			</td>
 			<td class="event-action">
-				<a class="wt_button marine small full" href="<?php echo $EM_Event->get_permalink() ?>">
-					<span>More details</span>
-				</a>
+				<a class="read_more_link" href="<?php echo $EM_Event->get_permalink() ?>">More details »</a>
 			</td>
 		</tr>
 	<?php endforeach; ?>

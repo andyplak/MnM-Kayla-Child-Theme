@@ -48,7 +48,8 @@
         <?php echo $EM_Location->output('#_LOCATIONNOTES') ?>
 
         <?php if( $EM_Location->output('#_LATT{WEBSITE}') != '' ) : ?>
-          <a class="pull-right pad-10" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website</a>
+          <a class="pull-right" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website »</a>
+          <div class="clearfix pad-20"></div>
         <?php endif; ?>
       </div>
 
@@ -89,7 +90,7 @@
         );
         echo em_get_events_list_shortcode( $event_list_args );
       ?>
-        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events</a>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events »</a>
         <div class="clearfix"></div>
       </div>
 
@@ -113,7 +114,8 @@
               $directions_url.= $EM_Location->output('#_LOCATIONTOWN').',+';
               $directions_url.= $EM_Location->output('#_LOCATIONPOSTCODE');
             ?>
-            <a class="pull-right" target="_new" href="<?php echo $directions_url ?>">Get Driving directions</a>
+            <a class="pull-right pad-10" target="_new" href="<?php echo $directions_url ?>">Get driving directions »</a>
+            <div class="clearfix"></div>
           </p>
 
           <h5><i class="wt-icon-circle-arrow-down"></i> Parking</h5>
@@ -148,7 +150,7 @@
             }
           }
         ?>
-          <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations</a>
+          <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations »</a>
         </div>
       </div>
 

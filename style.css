@@ -56,6 +56,10 @@ i.mnm-icon.female {
   padding: 10px;
 }
 
+.pad-20 {
+  padding: 20px;
+}
+
 /************ EVENTS LIST *************/
 .mnm-events-list {
   font-size: 0.8em;
