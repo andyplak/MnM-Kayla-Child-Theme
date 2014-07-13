@@ -62,7 +62,7 @@ i.mnm-icon.female {
 
 /************ EVENTS LIST *************/
 .mnm-events-list {
-  font-size: 0.8em;
+  /*font-size: 0.8em;*/
 }
 
 .mnm-events-list .wt_button.small span {
