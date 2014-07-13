@@ -25,19 +25,18 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
       <div class="framed_box rounded date-n-time">
         <h6 class="framed_box_title">Date &amp; Time</h6>
         <div class="framed_box_content clearfix">
-          <p>
-            <h5>
-              <i class="wt-icon-calendar"></i>
-              <?php echo $EM_Event->output('#_EVENTDATES') ?>
-            </h5>
+          <h5>
+            <i class="wt-icon-calendar"></i>
+            <?php echo $EM_Event->output('#_EVENTDATES') ?>
+          </h5>
 
-            from <?php echo $EM_Event->output('#_EVENTTIMES') ?>
-            <span class="tooltips">
-              <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="We advise you to come 30 min earlier">
-                <i class="wt-icon-info-sign"></i>
-              </a>
-            </span>
-          </p>
+          from <?php echo $EM_Event->output('#_EVENTTIMES') ?>
+          <span class="tooltips">
+            <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="We advise you to come 30 min earlier">
+              <i class="wt-icon-info-sign"></i>
+            </a>
+          </span>
+
         </div>
       </div>
 
@@ -67,7 +66,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
       </div>
 
     <?php if( !is_null( $EM_Location = $EM_Event->get_location() ) ) : ?>
-      <div class="framed_box rounded">
+      <div class="framed_box rounded location">
         <h6 class="framed_box_title">Location</h6>
         <div class="framed_box_content clearfix">
           <h5>
@@ -82,7 +81,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
             echo ( isset($EM_Location->location_postcode) ? $EM_Location->location_postcode.'<br />' : '');
           ?>
 
-          <a class="pull-right pad-10" href="<?php echo $EM_Location->get_permalink() ?>">More details</a>
+          <a class="pull-right pad-10" href="<?php echo $EM_Location->get_permalink() ?>">More details »</a>
 
         </div>
       </div>

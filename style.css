@@ -163,6 +163,11 @@ body.single-event .framed_box.participants .one_half {
   float: left !important;
 }
 
+body.single-event .framed_box.location a.pad-10 {
+  padding-bottom: 0;
+}
+
+
 body.single-event .wt_button.small {
   margin-right: 0;
 }
