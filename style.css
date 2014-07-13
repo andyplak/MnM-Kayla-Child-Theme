@@ -93,7 +93,6 @@ i.mnm-icon.female {
     min-height: 55px;
   }
 
-
   .mnm-events-list a.wt_button {
     width: 75px;
     margin: 0;
@@ -116,11 +115,12 @@ i.mnm-icon.female {
     min-width: 140px;
   }
 
-  /*
+/*
   .mnm-events-list .event-action {
     width: 80px;
   }
-  */
+*/
+
 }
 
 @media only screen and (max-width: 958px) {
