@@ -71,6 +71,7 @@ i.mnm-icon.female {
   line-height: inherit;
 }
 
+.mnm-matches-table .event-desc a,
 .mnm-events-list .event-desc a {
   display: block;
   margin-bottom: 7px;
@@ -78,21 +79,25 @@ i.mnm-icon.female {
 
 @media all and (min-width: 768px) {
 
+  .mnm-matches-table .event-desc,
   .mnm-events-list .event-desc {
     position: relative;
   }
 
+  .mnm-matches-table .event-desc img,
   .mnm-events-list .event-desc img {
     position: absolute;
     top: 11px;
     left: 8px;
   }
 
+  .mnm-matches-table .event-desc div,
   .mnm-events-list .event-desc div {
     padding-left: 58px;
     min-height: 55px;
   }
 
+  .mnm-matches-table a.wt_button,
   .mnm-events-list a.wt_button {
     width: 75px;
     margin: 0;
