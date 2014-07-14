@@ -20,8 +20,8 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
     <?php //theme_generator('breadcrumbs',$post->ID); ?>
 
     <?php if( mnm_is_speed_dating_event( $EM_Event ) ) : ?>
-    <div class="two_third">
-      <div class="one_half">
+    <div class="three_fifth">
+      <div class="two_fifth">
 
         <div class="framed_box rounded date-n-time">
           <h6 class="framed_box_title">Date &amp; Time</h6>
@@ -90,7 +90,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
       </div>
 
-      <div class="one_half last">
+      <div class="three_fifth last">
 
         <?php if( has_post_thumbnail( $EM_Event->ID ) ) : ?>
           <span class="image_frame styled_image">
@@ -104,27 +104,9 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
       </div>
 
-      <div class="clearfix"></div>
-
-      <div class="framed_box rounded">
-        <h6 class="framed_box_title">Similar Events like this</h6>
-
-        <?php
-          // Show events list for related events
-          // Initially just events for the same location. Later on, tie into region
-          $event_list_args = array('limit'=> 5);
-          if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
-            $event_list_args['location'] = $EM_Location->location_id;
-          }
-          echo em_get_events_list_shortcode( $event_list_args );
-        ?>
-        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events »</a>
-        <div class="clearfix"></div>
-      </div>
-
     </div>
 
-    <div class="one_third last">
+    <div class="two_fifth last">
 
       <div class="framed_box rounded">
         <h6 class="framed_box_title">Book this event</h6>
@@ -136,6 +118,24 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
     </div>
 
+
+    <div class="clearfix"></div>
+
+    <div class="framed_box rounded">
+      <h6 class="framed_box_title">Similar Events like this</h6>
+
+      <?php
+        // Show events list for related events
+        // Initially just events for the same location. Later on, tie into region
+        $event_list_args = array('limit'=> 5);
+        if( !is_null( $EM_Location = $EM_Event->get_location() ) ) {
+          $event_list_args['location'] = $EM_Location->location_id;
+        }
+        echo em_get_events_list_shortcode( $event_list_args );
+      ?>
+      <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events »</a>
+      <div class="clearfix"></div>
+    </div>
 
   <?php else: ?>
     <?php echo $EM_Event->output_single(); ?>
