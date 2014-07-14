@@ -8,6 +8,8 @@
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), full );
     $ftrd_img_css = "background-image: url(".$thumbnail[0].")";
   }
+
+  $i = 0;
 ?>
 <?php get_header(); ?>
 <?php //theme_generator('custom_header',$post->ID); ?></div>
@@ -55,23 +57,31 @@
 
       <div class="three_fifth last location-gallery">
 
-
         <?php $attachments = new Attachments( 'mnm_location_gallery', $product->ID ); ?>
 
         <?php if( $attachments->exist() ) : ?>
 
-          <div class="image_frame styled_image">
-            <span class="">
-              <a data-rel="lightbox" class="overlay_zoom" title="<?php echo $attachments->field( 'title', 0 ); ?>" href="<?php echo $attachments->url( 0 ); ?>">
-                <img class="custom" alt="<?php echo $attachments->field( 'title', 0 ); ?>" src="<?php echo $attachments->url( 0 ); ?>" />
-              </a>
-            </span>
+          <div class="location-gallery">
+            <?php while( $attachments->get() ) : ?>
+            <div class="gallery_item <?php echo $i ?>" style="<?php echo ($i > 0 ? 'display:none' : '') ?>">
+              <div class="image_frame styled_image">
+                <span class="">
+                  <a data-rel="lightbox[portfolio]" class="overlay_zoom" title="<?php echo $attachments->field( 'title' ); ?>" href="<?php echo $attachments->url(); ?>">
+                    <?php echo str_replace('src', 'class="number_'.$i.'" src', $attachments->image('large') ); ?>
+                    <?php /* <img class="number_<?php echo $i ?>" alt="<?php echo $attachments->field( 'title' ); ?>" src="<?php echo $attachments->url(); ?>" /> */ ?>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <?php $i++; endwhile; ?>
           </div>
+
+          <?php $attachments->rewind(); $i = 0; ?>
 
           <ul class="thumbnails">
           <?php while( $attachments->get() ) : ?>
-            <li><a href="<?php echo $attachments->url(); ?>" data-title="<?php echo $attachments->field( 'title' ); ?>"><?php echo $attachments->image('thumbnail'); ?></a></li>
-          <?php endwhile; ?>
+            <li><a href="<?php echo $attachments->url(); ?>" data-gal-index=<?php echo $i ?> ><?php echo $attachments->image('thumbnail'); ?></a></li>
+          <?php $i++; endwhile; ?>
           </ul>
 
         <?php endif; ?>

@@ -13,15 +13,13 @@ jQuery(document).ready(function($){
   }
 
   // Create events page thumbnail gallery
-  $('.location-gallery .thumbnails').simpleGal({
-      mainImage: '.custom'
-  });
+  $('.location-gallery .thumbnails').mnmGal();
 });
 
 
 
 /*
- * simpleGal -v0.0.1
+ * mnmGal based on simpleGal
  * A simple image gallery plugin.
  * https://github.com/steverydz/simpleGal
  *
@@ -32,29 +30,28 @@ jQuery(document).ready(function($){
 
   $.fn.extend({
 
-    simpleGal: function (options) {
+    mnmGal: function (options) {
+
 
       var defaults = {
-        mainImage: ".placeholder"
+        galleryDiv: ".location-gallery"
       };
+
 
       options = $.extend(defaults, options);
 
       return this.each(function () {
 
         var thumbnail = $(this).find("a"),
-            mainImage = $(this).parent().find(options.mainImage),
-            lightBoxLink = $(this).parent().find('.overlay_zoom');
+            galleryDiv = $(this).parent().find(options.galleryDiv);
 
         thumbnail.on("click", function (e) {
           e.preventDefault();
 
-          var galleryImage = $(this).attr("href"),
-              galleryImageTitle = $(this).data('title');
+          var galleryItemIndex = $(this).data('gal-index');
 
-          mainImage.attr("src", galleryImage);
-          lightBoxLink.attr("href", galleryImage);
-          lightBoxLink.attr("title", galleryImageTitle);
+          galleryDiv.find('.gallery_item').hide();
+          galleryDiv.find('.gallery_item.'+galleryItemIndex).show();
         });
 
       });
