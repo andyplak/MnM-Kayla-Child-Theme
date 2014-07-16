@@ -222,9 +222,19 @@ body.single-event .em-booking-login-form input {
   display: inline-block;
 }
 
+@media only screen and (max-width: 767px) {
+  body.single-event .event-notes {
+    padding: 0 5px;
+  }
+
+  .responsive .styled_image {
+    width: 250px !important;
+  }
+}
+
 @media only screen and (max-width: 767px) and (min-width: 480px) {
   .responsive .styled_image {
-    width: 430px !important;
+    width: 370px !important;
   }
 }
 

@@ -101,7 +101,9 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
           </span>
         <?php endif ?>
 
-        <?php echo $EM_Event->output('#_EVENTNOTES'); ?>
+        <div class="event-notes">
+          <?php echo $EM_Event->output('#_EVENTNOTES'); ?>
+        </div>
 
       </div>
 
