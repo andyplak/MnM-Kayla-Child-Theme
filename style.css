@@ -79,6 +79,7 @@ i.mnm-icon.female {
 .mnm-events-list .event-desc a {
   display: block;
   margin-bottom: 7px;
+  font-weight: bold;
 }
 
 @media all and (min-width: 768px) {
