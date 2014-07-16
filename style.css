@@ -60,6 +60,10 @@ i.mnm-icon.female {
   padding: 20px;
 }
 
+.go-to-website {
+  margin-top: -10px;
+}
+
 /************ EVENTS LIST *************/
 .mnm-events-list {
   /*font-size: 0.8em;*/

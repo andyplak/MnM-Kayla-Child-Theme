@@ -50,7 +50,7 @@
         <?php echo $EM_Location->output('#_LOCATIONNOTES') ?>
 
         <?php if( $EM_Location->output('#_LATT{WEBSITE}') != '' ) : ?>
-          <a class="pull-right" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website »</a>
+          <a class="pull-right go-to-website" target="_new" href="<?php echo $EM_Location->output('#_LATT{WEBSITE}') ?>">Go to website »</a>
           <div class="clearfix pad-20"></div>
         <?php endif; ?>
       </div>
