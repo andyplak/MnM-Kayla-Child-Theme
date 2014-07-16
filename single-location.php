@@ -12,7 +12,7 @@
   $i = 0;
 ?>
 <?php get_header(); ?>
-<?php //theme_generator('custom_header',$post->ID); ?></div>
+<?php //theme_generator('custom_header',$post->ID); ?>
 
   <header id="intro" class="clearfix">
     <div class="inner">

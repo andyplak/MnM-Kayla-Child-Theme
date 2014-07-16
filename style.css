@@ -141,6 +141,11 @@ i.mnm-icon.female {
 
 
 /************** SINGLE EVENTS PAGE ******************/
+
+body.single-event #wt_content {
+  padding: 50px 30px;
+}
+
 body.single-event .framed_box_title,
 body.single-location .framed_box_title {
   background-color: #222222;
@@ -232,8 +237,10 @@ body.single-event .em-booking-login-form input {
 /************* Single Location *************/
 
 body.single-location header .inner {
+  /*
   width: 1000px !important;
   padding: 0 !important;
+  */
 }
 
 body.single-location .breadcrumbs {
@@ -267,7 +274,7 @@ body.single-location .location-map {
 }
 
 body.single-location #wt_content {
-  padding: 10px 10px 50px;
+  padding: 10px 30px 50px;
 }
 
 
