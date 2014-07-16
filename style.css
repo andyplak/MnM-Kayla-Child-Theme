@@ -156,10 +156,6 @@ body.single-location .framed_box_content {
   padding: 10px;
 }
 
-body.single-event .date-n-time h5 {
-  margin-bottom: 0;
-}
-
 body.single-event .date-n-time .tooltip {
   min-width: 100px;
 }
@@ -178,10 +174,9 @@ body.single-event .framed_box.participants .one_half {
   float: left !important;
 }
 
-body.single-event .framed_box.location a.pad-10 {
-  padding-bottom: 0;
+body.single-event .framed_box.participants .clearfix {
+  padding-bottom: 10px;
 }
-
 
 body.single-event .wt_button.small {
   margin-right: 0;

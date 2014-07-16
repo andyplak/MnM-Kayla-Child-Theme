@@ -32,12 +32,13 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
             </h5>
 
             from <?php echo $EM_Event->output('#_EVENTTIMES') ?>
+            <?php /*
             <span class="tooltips">
               <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="We advise you to come 30 min earlier">
                 <i class="wt-icon-info-sign"></i>
               </a>
             </span>
-
+            */ ?>
           </div>
         </div>
 
@@ -62,7 +63,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
                 echo '<br />', mnm_kayla_show_ticket_availability( $EM_Ticket ), '</div>';
               }
             ?>
-            <div class="clearboth"></div>
+            <div class="clearfix"></div>
           </div>
         </div>
 
