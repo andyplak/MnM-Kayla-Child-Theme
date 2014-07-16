@@ -90,7 +90,7 @@ if ( $events_count > 0 ) {
 					if( !$EM_Event->event_all_day ){
 						$time_format = ( get_option('dbem_time_format') ) ? get_option('dbem_time_format'):get_option('time_format');
 						if($EM_Event->event_start_time != $EM_Event->event_end_time ){
-							echo date_i18n($time_format, $EM_Event->start). ' - ' . date_i18n($time_format, $EM_Event->end);
+							echo date_i18n($time_format, $EM_Event->start). '-' . date_i18n($time_format, $EM_Event->end);
 						}else{
 							echo date_i18n($time_format, $EM_Event->start);
 						}
