@@ -90,7 +90,7 @@
 
       <div class="clearfix"></div>
 
-      <div class="framed_box rounded">
+      <div class="framed_box rounded hide-sm">
         <h6 class="framed_box_title">Upcoming Events</h6>
 
       <?php
@@ -162,6 +162,15 @@
         ?>
           <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/locations">See more locations »</a>
         </div>
+
+      </div>
+
+      <div class="framed_box rounded hide-lg">
+        <h6 class="framed_box_title">Upcoming Events</h6>
+
+        <?php echo em_get_events_list_shortcode( $event_list_args ); ?>
+        <a class="pull-right pad-10" href="<?php echo get_site_url() ?>/<?php echo EM_POST_TYPE_EVENT_SLUG ?>">See more events »</a>
+        <div class="clearfix"></div>
       </div>
 
     </div>
