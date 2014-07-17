@@ -39,6 +39,13 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
               </a>
             </span>
             */ ?>
+            <br />
+
+            <a class="pad-10 pull-right text-right" target="_blank" rel="nofollow"
+              href="<?php echo $EM_Event->output('#_EVENTICALURL') ?>">add to your calendar application »</a>
+
+            <a class="pad-10 pull-right" target="_blank" rel="nofollow"
+              href="<?php echo $EM_Event->output('#_EVENTGCALURL') ?>">add to google calendar »</a>
           </div>
         </div>
 

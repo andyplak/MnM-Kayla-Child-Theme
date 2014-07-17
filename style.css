@@ -52,6 +52,10 @@ i.mnm-icon.female {
   float: right;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .pad-10 {
   padding: 10px;
 }
