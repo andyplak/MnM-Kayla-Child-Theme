@@ -186,14 +186,25 @@ body.single-event .wt_button.small {
   margin-right: 0;
 }
 
+body.single-event .em-booking-form-details {
+  padding: 0;
+  width: 100%;
+  float: inherit;
+}
+
 body.single-event .em-booking-form-details input.input,
 body.single-event .em-booking-form-details textarea,
 body.single-event select {
-  width: 235px;
+  width: 250px;
 }
 
 body.single-event .em-booking-form-details .em-tickets-spaces {
   display: none;
+}
+
+body.single-event .em-bookings-form-gateway-expiry select {
+  display: inline-block;
+  width: 70px;
 }
 
 body.single-event div.em-booking-login {
@@ -226,6 +237,7 @@ body.single-event .em-booking-login-form input {
   display: inline-block;
 }
 
+
 @media only screen and (max-width: 767px) {
   body.single-event .event-notes {
     padding: 0 5px;
@@ -236,9 +248,46 @@ body.single-event .em-booking-login-form input {
   }
 }
 
+
+/* XS */
+@media only screen and (max-width: 480px) {
+  body.single-event .em-booking-form-details label,
+  body.single-event .em-booking-form-details input.input,
+  body.single-event .em-booking-form-details textarea,
+  body.single-event select {
+    width: 100%;
+  }
+
+  body.single-event .em-booking-form-details .input-dbem_sex label {
+    width: 100px;
+  }
+
+}
+
+/* SM */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
   .responsive .styled_image {
     width: 370px !important;
+  }
+}
+
+/* MD */
+@media only screen and (max-width: 959px) and (min-width: 768px) {
+  body.single-event .em-booking-form-details label {
+    width: 100%;
+  }
+}
+
+/* LG */
+@media only screen and (min-width: 960px) {
+  body.single-event .em-booking-form-details label {
+    width: 85px;
+  }
+
+  body.single-event .em-booking-form-details input.input,
+  body.single-event .em-booking-form-details textarea,
+  body.single-event select {
+    width: 245px;
   }
 }
 
