@@ -239,12 +239,12 @@ body.single-event .em-booking-login-form input {
 
 
 @media only screen and (max-width: 767px) {
-  body.single-event .event-notes {
-    padding: 0 5px;
+  body.single-event .event-content {
+    padding: 10px;
   }
 
   .responsive .styled_image {
-    width: 250px !important;
+    width: 230px !important;
   }
 }
 
@@ -267,7 +267,7 @@ body.single-event .em-booking-login-form input {
 /* SM */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
   .responsive .styled_image {
-    width: 370px !important;
+    width: 350px !important;
   }
 }
 
