@@ -41,11 +41,15 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
             */ ?>
             <br />
 
-            <a class="pad-10 pull-right text-right" target="_blank" rel="nofollow"
-              href="<?php echo $EM_Event->output('#_EVENTICALURL') ?>">add to your calendar application »</a>
+            <div class="pad-10">
+              <a class="pull-right text-right" target="_blank" rel="nofollow"
+                href="<?php echo $EM_Event->output('#_EVENTICALURL') ?>">Add to your calendar »</a>
 
-            <a class="pad-10 pull-right" target="_blank" rel="nofollow"
-              href="<?php echo $EM_Event->output('#_EVENTGCALURL') ?>">add to google calendar »</a>
+              <a class="pull-right" target="_blank" rel="nofollow"
+                href="<?php echo $EM_Event->output('#_EVENTGCALURL') ?>">Add to Google calendar »</a>
+
+              <div class="clearfix"></div>
+            </div>
           </div>
         </div>
 
@@ -98,7 +102,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
       </div>
 
-      <div class="three_fifth last">
+      <div class="three_fifth last event-content">
 
         <?php if( has_post_thumbnail( $EM_Event->ID ) ) : ?>
           <span class="image_frame styled_image">
