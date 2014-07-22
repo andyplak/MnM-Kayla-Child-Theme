@@ -91,6 +91,11 @@ i.mnm-icon.female {
   table.mnm-events-list .event-price {
     display: none;
   }
+
+  table.mnm-events-list .event-age {
+    min-width: 70px;
+  }
+
 }
 
 @media all and (min-width: 768px) {
