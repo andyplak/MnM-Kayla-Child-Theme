@@ -119,7 +119,7 @@ if ( $events_count > 0 ) {
 				}
 			} ?>
 			</td>
-			<td>
+			<td class="event-price">
 			<?php if( mnm_is_speed_dating_event( $EM_Event ) ) : ?>
 				<?php if( $prices['Male'] == $prices['Female'] ): ?>
 					<?php echo $prices['Male'] ?>

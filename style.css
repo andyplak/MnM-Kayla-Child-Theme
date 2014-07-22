@@ -86,6 +86,13 @@ i.mnm-icon.female {
   font-weight: bold;
 }
 
+@media all and (max-width: 767px) {
+
+  table.mnm-events-list .event-price {
+    display: none;
+  }
+}
+
 @media all and (min-width: 768px) {
 
   .mnm-matches-table .event-desc,
