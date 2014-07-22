@@ -308,9 +308,9 @@ body.single-location .breadcrumbs {
 body.single-location .location-image {
   background-repeat: no-repeat;
   background-size: cover;
-  display: inline-block;
+  float: left;
   vertical-align:middle;
-  width: 64%;
+  width: 65%;
   height: 175px;
   position: relative;
 }
@@ -326,7 +326,7 @@ body.single-location .location-image h1 {
 }
 
 body.single-location .location-map {
-  display: inline-block;
+  float: left;
   vertical-align:middle;
   width: 35%;
 }
