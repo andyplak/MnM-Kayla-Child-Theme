@@ -18,8 +18,11 @@ if( !empty($args['pagination']) && !array_key_exists('page',$args) && !empty($_R
 }
 //Can be either an array for the get search or an array of EM_Event objects
 if( is_object(current($args)) && get_class((current($args))) == 'EM_Event' ){
-	$func_args = func_get_args();
-	$events = $func_args[0];
+	// Hack to get events list working when passing in array EM_Event object
+	//$func_args = func_get_args();
+	//$events = $func_args[0];
+	$events = $args;
+
 	$args = (!empty($func_args[1]) && is_array($func_args[1])) ? $func_args[1] : array();
 	$args = apply_filters('em_events_output_args', EM_Events::get_default_search($args), $events);
 	$limit = ( !empty($args['limit']) && is_numeric($args['limit']) ) ? $args['limit']:false;
