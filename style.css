@@ -11,6 +11,12 @@
 
 @import url("../kayla/style.css");
 
+select,
+.input-group {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
 .spaces-avail {
   color: #5db348;
 }
@@ -205,6 +211,7 @@ body.single-event #wt_content {
   padding: 50px 30px;
 }
 
+.my-account .framed_box_title,
 body.single-event .framed_box_title,
 body.single-location .framed_box_title {
   background-color: #222222;
@@ -442,8 +449,20 @@ body.single-event .mnm-events-list {
 }
 
 
-/************* Media Queries **************/
+/************* My Account *****************/
 
+.my-account .profile-pic td {
+  padding-bottom: 20px;
+}
+
+
+.my-account .user-names input {
+  float: left;
+  margin-right: 10px;
+}
+
+
+/************* Media Queries **************/
 
 .hide-sm {
   display: none !important;
