@@ -72,5 +72,148 @@ function mnm_kayla_breadcrumbs_plus( $breadcrumbs ) {
 
   return $breadcrumbs;
 }
-
 add_filter( 'breadcrumbs_plus', 'mnm_kayla_breadcrumbs_plus', 10, 1);
+
+
+/************** Profile Page Changes *****************/
+
+// http://www.webdesign.org/content-management-system/wordpress/powerful-ways-to-customize-wordpress-user-profiles.22145.html
+
+/**
+ * User profile field customisation
+ */
+function mnm_kayla_hide_instant_messaging( $contactmethods ) {
+  unset($contactmethods['aim']);
+  unset($contactmethods['yim']);
+  unset($contactmethods['jabber']);
+  return $contactmethods;
+}
+add_filter('user_contactmethods','mnm_kayla_hide_instant_messaging',10,1);
+
+
+/**
+ * Add additional profile fields
+ */
+function mnm_kayla_show_edit_user_profile( $user ) {
+
+
+  $modal_update_href = esc_url( add_query_arg( array(
+    'page'     => 'my_media_manager',
+    '_wpnonce' => wp_create_nonce( 'my_media_manager_options' ),
+  ), admin_url( 'upload.php' ) ) );
+?>
+
+<table class="form-table profile-pic">
+  <tr>
+    <th><label for="pic">Profile Image</label></th>
+    <td>
+      <img src="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>"><br />
+      <input type="text" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
+      <button id="profile_pic_button" class="upload_image_button"
+        data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
+        data-uploader-title="<?php esc_attr_e( 'Choose a Profile Image' ); ?>"
+        data-uploader-button-text="<?php esc_attr_e( 'Set as profile image' ); ?>" value="upload"><?php _e( 'Set profile image' ); ?>
+      </button>
+    </td>
+  </tr>
+</table>
+
+<table class="form-table social">
+  <tr>
+    <th>
+      <label for="social">Facebook</label>
+    </th>
+    <td>
+      <input type="url" name="Facebook" id="Facebook" placeholder="http://www.facebook.com/USERNAME" 
+      value="<?php echo esc_attr( get_the_author_meta( 'Facebook', $user->ID ) ); ?>" class="regular-text" /></td>
+  </tr>
+  <tr>
+    <th>
+      <label for="social">Twitter</label>
+    </th>
+    <td>
+      <input type="url" name="Twitter" id="Twitter" placeholder="http://www.twitter.com/USERNAME" 
+      value="<?php echo esc_attr( get_the_author_meta( 'Twitter', $user->ID ) ); ?>" class="regular-text" /></td>
+  </tr>
+</table>
+<?php
+}
+add_action( 'show_user_profile', 'mnm_kayla_show_edit_user_profile');
+add_action( 'edit_user_profile', 'mnm_kayla_show_edit_user_profile');
+
+
+/**
+ * Configure custom image uploader
+ *
+ * http://mikejolley.com/2012/12/using-the-new-wordpress-3-5-media-uploader-in-plugins/
+ */
+function mnm_kayla_profile_media_manager() {
+
+  if ( ! did_action( 'wp_enqueue_media' ) ) {
+    wp_enqueue_media();
+  }
+
+  //wp_enqueue_script( 'custom-header' );
+
+
+  ?>
+  <script>
+
+jQuery(document).ready(function($) {
+
+  // Uploading files
+  var file_frame;
+
+  $('.upload_image_button').live('click', function( event ){
+
+    event.preventDefault();
+
+    var button = $(this);
+    var id = button.attr('id').replace('_button', ''); // id of element to be updated
+
+    // If the media frame already exists, reopen it.
+    if ( file_frame ) {
+      file_frame.open();
+      return;
+    }
+
+    // Create the media frame.
+    file_frame = wp.media.frames.file_frame = wp.media({
+      title: $( this ).data( 'uploader-title' ),
+      button: {
+        text: $( this ).data( 'uploader-button-text' ),
+      },
+      multiple: false  // Set to true to allow multiple files to be selected
+    });
+
+    // When an image is selected, run a callback.
+    file_frame.on( 'select', function() {
+      // We set multiple to false so only get one image from the uploader
+      attachment = file_frame.state().get('selection').first().toJSON();
+
+      //console.log( attachment );
+
+      // Do something with attachment.id and/or attachment.url here
+      $("#"+id).val(attachment.sizes.medium.url);
+    });
+
+    // Finally, open the modal
+    file_frame.open();
+  });
+});
+  </script>
+  <?php
+}
+add_action('admin_head','mnm_kayla_profile_media_manager');
+
+
+function mnm_kayla_save_profile_fields( $user_id ) {
+  if ( !current_user_can( 'edit_user', $user_id ) )
+    return false;
+  update_usermeta( $user_id, 'profile_pic', $_POST['profile_pic'] );
+  update_usermeta( $user_id, 'Facebook', $_POST['Facebook'] );
+  update_usermeta( $user_id, 'Twitter', $_POST['Twitter'] );
+}
+add_action( 'personal_options_update', 'mnm_kayla_save_profile_fields' );
+add_action( 'edit_user_profile_update', 'mnm_kayla_save_profile_fields' );
+
