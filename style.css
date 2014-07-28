@@ -66,6 +66,10 @@ i.mnm-icon.female {
   padding: 10px;
 }
 
+.framed_box_content .pad-10 {
+  padding: 10px 0 10px 10px;
+}
+
 .pad-20 {
   padding: 20px;
 }
@@ -257,7 +261,7 @@ body.single-event .em-booking-form-details {
 body.single-event .em-booking-form-details input.input,
 body.single-event .em-booking-form-details textarea,
 body.single-event select {
-  width: 250px;
+  width: 275px;
 }
 
 body.single-event .em-booking-form-details .em-tickets-spaces {
@@ -301,13 +305,11 @@ body.single-event .em-booking-login-form input {
 
 
 @media only screen and (max-width: 767px) {
-  body.single-event .event-content {
-    padding: 10px;
+
+  body.single-event #wt_content {
+    padding: 20px 20px;
   }
 
-  .responsive .styled_image {
-    width: 230px !important;
-  }
 }
 
 
@@ -328,9 +330,7 @@ body.single-event .em-booking-login-form input {
 
 /* SM */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-  .responsive .styled_image {
-    width: 350px !important;
-  }
+
 }
 
 /* MD */
@@ -443,6 +443,11 @@ body.single-event .mnm-events-list {
 }
 
 @media only screen and (max-width: 767px) {
+
+  body.single-location #wt_content {
+    padding: 20px 20px;
+  }
+
   body.single-location header .inner {
     width: 100% !important;
   }
@@ -472,7 +477,14 @@ body.single-event .mnm-events-list {
   display: none !important;
 }
 
+@media all and (max-width: 768px) {
+  #topWidgetWrapper {
+    display: none;
+  }
+}
+
 @media all and (min-width: 768px) {
+
   .show-sm {
     display: none !important;
   }

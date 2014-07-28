@@ -42,7 +42,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
             <br />
 
             <div class="pad-10">
-              <a class="pull-right text-right" target="_blank" rel="nofollow"
+              <a class="pull-right text-right hide-xs hide-sm" target="_blank" rel="nofollow"
                 href="<?php echo $EM_Event->output('#_EVENTICALURL') ?>">Add to your calendar »</a>
 
               <a class="pull-right" target="_blank" rel="nofollow"
