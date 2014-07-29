@@ -103,21 +103,6 @@ function mnm_kayla_show_edit_user_profile( $user ) {
   ), admin_url( 'upload.php' ) ) );
 ?>
 
-<table class="form-table profile-pic">
-  <tr>
-    <th><label for="pic">Profile Image</label></th>
-    <td>
-      <img src="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>"><br />
-      <input type="text" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
-      <button id="profile_pic_button" class="upload_image_button"
-        data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
-        data-uploader-title="<?php esc_attr_e( 'Choose a Profile Image' ); ?>"
-        data-uploader-button-text="<?php esc_attr_e( 'Set as profile image' ); ?>" value="upload"><?php _e( 'Set profile image' ); ?>
-      </button>
-    </td>
-  </tr>
-</table>
-
 <table class="form-table social">
   <tr>
     <th>

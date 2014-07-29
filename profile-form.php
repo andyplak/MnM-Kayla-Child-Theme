@@ -58,9 +58,20 @@ Theme My Login override of profile template.
 
 					<?php do_action( 'profile_personal_options', $profileuser ); ?>
 
-					<h3><?php _e( 'Name' ); ?></h3>
-
 					<table class="form-table">
+
+					<tr>
+						<th><label for="pic">Picture</label></th>
+						<td>
+							<img src="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>"><br />
+							<input type="text" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
+							<button id="profile_pic_button" class="upload_image_button"
+								data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
+								data-uploader-title="<?php esc_attr_e( 'Choose a Profile Image' ); ?>"
+								data-uploader-button-text="<?php esc_attr_e( 'Set as profile image' ); ?>" value="upload"><?php _e( 'Set profile image' ); ?>
+							</button>
+						</td>
+					</tr>
 
 					<tr>
 						<th><label for="first_name"><?php _e( 'First Name' ); ?></label></th>
@@ -72,6 +83,7 @@ Theme My Login override of profile template.
 						<td><input type="text" name="last_name" id="last_name" value="<?php echo esc_attr( $profileuser->last_name ); ?>" class="regular-text" /></td>
 					</tr>
 
+					<!--
 					<tr>
 						<th><label for="nickname"><?php _e( 'Nickname' ); ?> <span class="description"><?php _e( '(required)' ); ?></span></label></th>
 						<td><input type="text" name="nickname" id="nickname" value="<?php echo esc_attr( $profileuser->nickname ); ?>" class="regular-text" /></td>
@@ -112,6 +124,7 @@ Theme My Login override of profile template.
 							</select>
 						</td>
 					</tr>
+				-->
 					</table>
 
 					<table class="form-table">
@@ -139,11 +152,15 @@ Theme My Login override of profile template.
 
 					<table class="form-table">
 					<tr>
-						<th><label for="description"><?php _e( 'Biographical Info' ); ?></label></th>
-						<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
-						<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.' ); ?></span></td>
+						<th><label for="description"><?php _e( 'Short Bio' ); ?></label></th>
+						<td><textarea name="description" id="description" rows="5" cols="30" placeholder="Tell a little bit more about yourself"><?php echo esc_html( $profileuser->description ); ?></textarea></td>
 					</tr>
 
+					</table>
+
+					<?php do_action( 'show_user_profile', $profileuser ); ?>
+
+					<table class="form-table">
 					<?php
 					$show_password_fields = apply_filters( 'show_password_fields', true, $profileuser );
 					if ( $show_password_fields ) :
@@ -159,7 +176,6 @@ Theme My Login override of profile template.
 					<?php endif; ?>
 					</table>
 
-					<?php do_action( 'show_user_profile', $profileuser ); ?>
 				</div>
 			</div>
 		</div>
