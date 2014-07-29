@@ -125,42 +125,12 @@ Theme My Login override of profile template.
 						</td>
 					</tr>
 				-->
-					</table>
 
-					<table class="form-table">
 					<tr>
 						<th><label for="email"><?php _e( 'E-mail' ); ?> <span class="description"><?php _e( '(required)' ); ?></span></label></th>
 						<td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ); ?>" class="regular-text" /></td>
 					</tr>
 
-					<tr>
-						<th><label for="url"><?php _e( 'Website' ); ?></label></th>
-						<td><input type="text" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ); ?>" class="regular-text code" /></td>
-					</tr>
-
-					<?php
-						foreach ( _wp_get_user_contactmethods() as $name => $desc ) {
-					?>
-					<tr>
-						<th><label for="<?php echo $name; ?>"><?php echo apply_filters( 'user_'.$name.'_label', $desc ); ?></label></th>
-						<td><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_attr( $profileuser->$name ); ?>" class="regular-text" /></td>
-					</tr>
-					<?php
-						}
-					?>
-					</table>
-
-					<table class="form-table">
-					<tr>
-						<th><label for="description"><?php _e( 'Short Bio' ); ?></label></th>
-						<td><textarea name="description" id="description" rows="5" cols="30" placeholder="Tell a little bit more about yourself"><?php echo esc_html( $profileuser->description ); ?></textarea></td>
-					</tr>
-
-					</table>
-
-					<?php do_action( 'show_user_profile', $profileuser ); ?>
-
-					<table class="form-table">
 					<?php
 					$show_password_fields = apply_filters( 'show_password_fields', true, $profileuser );
 					if ( $show_password_fields ) :
@@ -174,7 +144,32 @@ Theme My Login override of profile template.
 						</td>
 					</tr>
 					<?php endif; ?>
+
+<!--
+					<tr>
+						<th><label for="url"><?php _e( 'Website' ); ?></label></th>
+						<td><input type="text" name="url" id="url" value="<?php echo esc_attr( $profileuser->user_url ); ?>" class="regular-text code" /></td>
+					</tr>
+-->
+					<?php
+						foreach ( _wp_get_user_contactmethods() as $name => $desc ) {
+					?>
+					<tr>
+						<th><label for="<?php echo $name; ?>"><?php echo apply_filters( 'user_'.$name.'_label', $desc ); ?></label></th>
+						<td><input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo esc_attr( $profileuser->$name ); ?>" class="regular-text" /></td>
+					</tr>
+					<?php
+						}
+					?>
+
+					<tr>
+						<th><label for="description"><?php _e( 'Short Bio' ); ?></label></th>
+						<td><textarea name="description" id="description" rows="5" cols="30" placeholder="Tell a little bit more about yourself"><?php echo esc_html( $profileuser->description ); ?></textarea></td>
+					</tr>
+
 					</table>
+
+					<?php do_action( 'show_user_profile', $profileuser ); ?>
 
 				</div>
 			</div>
