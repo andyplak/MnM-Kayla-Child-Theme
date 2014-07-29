@@ -211,7 +211,8 @@ Theme My Login override of profile template.
 			<div class="framed_box rounded">
 				<h6 class="framed_box_title">My Settings</h6>
 				<div class="framed_box_content clearfix email-subscription-container">
-
+					<table class="form-table">
+					</table>
 				</div>
 			</div>
 

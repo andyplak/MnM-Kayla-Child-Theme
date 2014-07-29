@@ -46,7 +46,7 @@ jQuery(document).ready(function($){
       // We set multiple to false so only get one image from the uploader
       attachment = file_frame.state().get('selection').first().toJSON();
 
-      console.log( attachment );
+      //console.log( attachment );
 
       // Do something with attachment.id and/or attachment.url here
       $("#"+id).val(attachment.sizes.medium.url);
@@ -56,6 +56,18 @@ jQuery(document).ready(function($){
     // Finally, open the modal
     file_frame.open();
   });
+
+
+  // Modify the profile form. Remove the "Further Information" header churned out by EM
+  var furtherInfo = $('#your-profile h3:contains("Further Information")');
+  furtherInfo.remove();
+
+  var emailSubTableRow = $('#your-profile tr:contains("Speed Dating Email Settings")');
+  emailSubTableRow.children('th').hide();
+  console.log( emailSubTableRow );
+
+  $('.email-subscription-container table').append(emailSubTableRow);
+  
 
 });
 
