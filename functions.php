@@ -125,7 +125,8 @@ function mnm_kayla_show_edit_user_profile( $user ) {
     </th>
     <td>
       <input type="url" name="Facebook" id="Facebook" placeholder="http://www.facebook.com/USERNAME" 
-      value="<?php echo esc_attr( get_the_author_meta( 'Facebook', $user->ID ) ); ?>" class="regular-text" /></td>
+      value="<?php echo esc_attr( get_the_author_meta( 'Facebook', $user->ID ) ); ?>" class="regular-text" />
+    </td>
   </tr>
   <tr>
     <th>
@@ -133,8 +134,26 @@ function mnm_kayla_show_edit_user_profile( $user ) {
     </th>
     <td>
       <input type="url" name="Twitter" id="Twitter" placeholder="http://www.twitter.com/USERNAME" 
-      value="<?php echo esc_attr( get_the_author_meta( 'Twitter', $user->ID ) ); ?>" class="regular-text" /></td>
+      value="<?php echo esc_attr( get_the_author_meta( 'Twitter', $user->ID ) ); ?>" class="regular-text" />
+    </td>
   </tr>
+</table>
+
+<table class="my-photos">
+  <?php for($i=1; $i<=6; $i++) : ?>
+  <tr>
+    <td>
+      <img src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" />
+      <input type="text" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
+      <input type="hidden" name="gallery_pic_<?php echo $i ?>_id" id="gallery_pic_<?php echo $i ?>_id" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" class="regular-text" />
+      <button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button"
+        data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
+        data-uploader-title="<?php esc_attr_e( 'Choose a Gallery Image' ); ?>"
+        data-uploader-button-text="<?php esc_attr_e( 'Set as gallery image' ); ?>" value="upload"><?php _e( 'Set gallery image' ); ?> <?php echo $i ?>
+      </button>
+    </td>
+  </tr>
+  <?php endfor; ?>
 </table>
 <?php
 }
@@ -152,9 +171,6 @@ function mnm_kayla_profile_media_manager() {
   if ( ! did_action( 'wp_enqueue_media' ) ) {
     wp_enqueue_media();
   }
-
-  //wp_enqueue_script( 'custom-header' );
-
 
   ?>
   <script>
@@ -195,6 +211,7 @@ jQuery(document).ready(function($) {
 
       // Do something with attachment.id and/or attachment.url here
       $("#"+id).val(attachment.sizes.medium.url);
+      $("#"+id+"_id").val(attachment.id);
     });
 
     // Finally, open the modal
@@ -213,6 +230,10 @@ function mnm_kayla_save_profile_fields( $user_id ) {
   update_usermeta( $user_id, 'profile_pic', $_POST['profile_pic'] );
   update_usermeta( $user_id, 'Facebook', $_POST['Facebook'] );
   update_usermeta( $user_id, 'Twitter', $_POST['Twitter'] );
+  for($i=1; $i<=6; $i++) {
+    update_usermeta( $user_id, 'gallery_pic_'.$i, $_POST['gallery_pic_'.$i] );
+    update_usermeta( $user_id, 'gallery_pic_'.$i.'_id', $_POST['gallery_pic_'.$i.'_id'] );
+  }
 }
 add_action( 'personal_options_update', 'mnm_kayla_save_profile_fields' );
 add_action( 'edit_user_profile_update', 'mnm_kayla_save_profile_fields' );
