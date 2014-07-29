@@ -215,6 +215,7 @@ body.single-event #wt_content {
   padding: 50px 30px;
 }
 
+#your-profile .framed_box_title,
 .my-account .framed_box_title,
 body.single-event .framed_box_title,
 body.single-location .framed_box_title {

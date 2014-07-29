@@ -155,6 +155,7 @@ function mnm_kayla_show_edit_user_profile( $user ) {
   </tr>
   <?php endfor; ?>
 </table>
+
 <?php
 }
 add_action( 'show_user_profile', 'mnm_kayla_show_edit_user_profile');
