@@ -15,7 +15,18 @@ Theme My Login override of profile template.
 		}
 	}
 
+	// Prep for media manager
+	if ( ! did_action( 'wp_enqueue_media' ) ) {
+		wp_enqueue_media();
+	}
+
+	$modal_update_href = esc_url( add_query_arg( array(
+		'page'     => 'my_media_manager',
+		'_wpnonce' => wp_create_nonce( 'my_media_manager_options' ),
+	), admin_url( 'upload.php' ) ) );
+
 ?>
+
 <div class="login profile" id="theme-my-login<?php $template->the_instance(); ?>">
 
 	<form id="your-profile" action="<?php $template->the_action_url( 'profile' ); ?>" method="post">
@@ -166,7 +177,22 @@ Theme My Login override of profile template.
 			<div class="framed_box rounded">
 				<h6 class="framed_box_title">My Photos</h6>
 				<div class="framed_box_content clearfix">
-					<?php mnm_my_past_speed_dating_events() ?>
+					<table class="my-photos">
+						<?php for($i=1; $i<=6; $i++) : ?>
+						<tr>
+							<td>
+								<img src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" />
+								<input type="text" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
+								<input type="hidden" name="gallery_pic_<?php echo $i ?>_id" id="gallery_pic_<?php echo $i ?>_id" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" class="regular-text" />
+								<button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button"
+									data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
+									data-uploader-title="<?php esc_attr_e( 'Choose a Gallery Image' ); ?>"
+									data-uploader-button-text="<?php esc_attr_e( 'Set as gallery image' ); ?>" value="upload"><?php _e( 'Set gallery image' ); ?> <?php echo $i ?>
+								</button>
+							</td>
+						</tr>
+						<?php endfor; ?>
+					</table>
 				</div>
 			</div>
 

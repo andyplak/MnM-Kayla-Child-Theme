@@ -139,23 +139,6 @@ function mnm_kayla_show_edit_user_profile( $user ) {
   </tr>
 </table>
 
-<table class="my-photos">
-  <?php for($i=1; $i<=6; $i++) : ?>
-  <tr>
-    <td>
-      <img src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" />
-      <input type="text" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
-      <input type="hidden" name="gallery_pic_<?php echo $i ?>_id" id="gallery_pic_<?php echo $i ?>_id" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" class="regular-text" />
-      <button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button"
-        data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
-        data-uploader-title="<?php esc_attr_e( 'Choose a Gallery Image' ); ?>"
-        data-uploader-button-text="<?php esc_attr_e( 'Set as gallery image' ); ?>" value="upload"><?php _e( 'Set gallery image' ); ?> <?php echo $i ?>
-      </button>
-    </td>
-  </tr>
-  <?php endfor; ?>
-</table>
-
 <?php
 }
 add_action( 'show_user_profile', 'mnm_kayla_show_edit_user_profile');
@@ -167,6 +150,11 @@ add_action( 'edit_user_profile', 'mnm_kayla_show_edit_user_profile');
  *
  * http://mikejolley.com/2012/12/using-the-new-wordpress-3-5-media-uploader-in-plugins/
  */
+/*
+
+This is now dealt with in the theme due to Theme My Login bringing this to the front end
+Commenting in case we need to revert
+
 function mnm_kayla_profile_media_manager() {
 
   if ( ! did_action( 'wp_enqueue_media' ) ) {
@@ -223,6 +211,7 @@ jQuery(document).ready(function($) {
   <?php
 }
 add_action('admin_head','mnm_kayla_profile_media_manager');
+*/
 
 
 function mnm_kayla_save_profile_fields( $user_id ) {
