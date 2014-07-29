@@ -213,3 +213,28 @@ function mnm_kayla_save_profile_fields( $user_id ) {
 add_action( 'personal_options_update', 'mnm_kayla_save_profile_fields' );
 add_action( 'edit_user_profile_update', 'mnm_kayla_save_profile_fields' );
 
+
+/**
+ * Hook in and modify Email Subscription check box texts
+ */
+function mnm_kayla_emp_forms_output_field_input($html, $EM_Form, $field, $post) {
+
+  if($field['fieldid'] == EMAIL_SUBSCRIPTION_FIELD_ID) {
+
+    $searches = array(
+      'Upcoming Events Newsletter' => 'YES, Send me an <strong>overview of upcoming events</strong> that fit my requirements',
+      'Last Minute Discount Offers' => 'YES, Send me a last minute invite for an event that fit my requirements so I can profit from a <strong>50% discount</strong>',
+      'Meet and Match Newsletter' => 'YES, Send me the newsletter with <strong>news, hints and tips about dating</strong>',
+    );
+
+    // Replace the last occurance (value can be nested within checkbox so don't want to mess with that)
+    foreach( $searches as $search => $replace ) {
+      $pos = strrpos($html, $search);
+      if($pos !== false) {
+        $html = substr_replace($html, $replace, $pos, strlen($search));
+      }
+    }
+  }
+  return $html;
+}
+add_filter('emp_forms_output_field_input', 'mnm_kayla_emp_forms_output_field_input', 10 , 4);
