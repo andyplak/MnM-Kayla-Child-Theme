@@ -468,6 +468,20 @@ body.single-event .mnm-events-list {
 }
 
 
+/************* Profile ***********/
+
+#your-profile .form-table {
+  width: 100%;
+}
+
+#your-profile .form-table input:not([type='checkbox']):not([type='radio']),
+#your-profile .form-table textarea {
+  margin: 0 0 10px 0;
+  padding: 8px 5px;
+  line-height: 15px;
+  width: 100%;
+}
+
 /************* Media Queries **************/
 
 .hide-sm {
