@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 
 
 
-  // Uploading files
+  // Image uploader for Profile and Gallery pics
   var file_frame;
   $('.upload_image_button').live('click', function( event ){
 
@@ -25,12 +25,6 @@ jQuery(document).ready(function($){
 
     var button = $(this);
     var id = button.attr('id').replace('_button', ''); // id of element to be updated
-
-    // If the media frame already exists, reopen it.
-    if ( file_frame ) {
-      file_frame.open();
-      return;
-    }
 
     // Create the media frame.
     file_frame = wp.media.frames.file_frame = wp.media({
@@ -46,16 +40,15 @@ jQuery(document).ready(function($){
       // We set multiple to false so only get one image from the uploader
       attachment = file_frame.state().get('selection').first().toJSON();
 
-      //console.log( attachment );
-
       // Do something with attachment.id and/or attachment.url here
-      $("#"+id).val(attachment.sizes.medium.url);
-      $("#"+id+"_id").val(attachment.id);
+      $("#"+id).val( attachment.id );
+      $("#"+id+'_img').attr( "src", attachment.sizes.thumbnail.url );
     });
 
     // Finally, open the modal
     file_frame.open();
   });
+
 
 
   // Modify the profile form. Remove the "Further Information" header churned out by EM
@@ -64,10 +57,8 @@ jQuery(document).ready(function($){
 
   var emailSubTableRow = $('#your-profile tr:contains("Speed Dating Email Settings")');
   emailSubTableRow.children('th').hide();
-  console.log( emailSubTableRow );
 
   $('.email-subscription-container table').append(emailSubTableRow);
-  
 
 });
 

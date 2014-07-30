@@ -63,9 +63,9 @@ Theme My Login override of profile template.
 					<tr>
 						<th><label for="pic">Picture</label></th>
 						<td>
-							<img src="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>"><br />
-							<input type="text" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
-							<button id="profile_pic_button" class="upload_image_button"
+							<img id="profile_pic_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" />
+							<input type="hidden" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
+							<button id="profile_pic_button" class="upload_image_button wt_button black_alt small"
 								data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
 								data-uploader-title="<?php esc_attr_e( 'Choose a Profile Image' ); ?>"
 								data-uploader-button-text="<?php esc_attr_e( 'Set as profile image' ); ?>" value="upload"><?php _e( 'Set profile image' ); ?>
@@ -192,13 +192,12 @@ Theme My Login override of profile template.
 						<?php for($i=1; $i<=6; $i++) : ?>
 						<tr>
 							<td>
-								<img src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" />
-								<input type="text" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
-								<input type="hidden" name="gallery_pic_<?php echo $i ?>_id" id="gallery_pic_<?php echo $i ?>_id" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i.'_id', $user->ID ) ); ?>" class="regular-text" />
-								<button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button"
+								<img id="gallery_pic_<?php echo $i ?>_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" />
+								<input type="hidden" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
+								<button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button wt_button black_alt"
 									data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
 									data-uploader-title="<?php esc_attr_e( 'Choose a Gallery Image' ); ?>"
-									data-uploader-button-text="<?php esc_attr_e( 'Set as gallery image' ); ?>" value="upload"><?php _e( 'Set gallery image' ); ?> <?php echo $i ?>
+									data-uploader-button-text="<?php esc_attr_e( 'Set as gallery image' ); ?>" value="upload"><span><?php _e( 'Set gallery image' ); ?> <?php echo $i ?></span>
 								</button>
 							</td>
 						</tr>
@@ -233,7 +232,7 @@ Theme My Login override of profile template.
 			<input type="hidden" name="action" value="profile" />
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 			<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
-			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Update Profile' ); ?>" name="submit" />
+			<input type="submit" class="button-primary wt_button black_alt" value="<?php esc_attr_e( 'Update Profile' ); ?>" name="submit" />
 		</p>
 
 	</form>

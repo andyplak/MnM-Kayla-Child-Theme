@@ -207,7 +207,6 @@ function mnm_kayla_save_profile_fields( $user_id ) {
   update_usermeta( $user_id, 'Twitter', $_POST['Twitter'] );
   for($i=1; $i<=6; $i++) {
     update_usermeta( $user_id, 'gallery_pic_'.$i, $_POST['gallery_pic_'.$i] );
-    update_usermeta( $user_id, 'gallery_pic_'.$i.'_id', $_POST['gallery_pic_'.$i.'_id'] );
   }
 }
 add_action( 'personal_options_update', 'mnm_kayla_save_profile_fields' );

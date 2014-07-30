@@ -482,6 +482,10 @@ body.single-event .mnm-events-list {
   width: 100%;
 }
 
+#your-profile .wt_button {
+  padding: 10px;
+}
+
 /************* Media Queries **************/
 
 .hide-sm {
