@@ -3,7 +3,6 @@
 Theme My Login override of profile template.
 */
 
-
 	// Prep for recommended events
 	$EM_Events = EM_Events::get();
 
@@ -63,8 +62,8 @@ Theme My Login override of profile template.
 					<tr>
 						<th><label for="pic">Picture</label></th>
 						<td>
-							<img id="profile_pic_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" />
-							<input type="hidden" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $user->ID ) ); ?>" class="regular-text" />
+							<img id="profile_pic_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'profile_pic', $current_user->ID ) ); ?>" />
+							<input type="hidden" name="profile_pic" id="profile_pic" value="<?php echo esc_attr( get_the_author_meta( 'profile_pic', $current_user->ID ) ); ?>" class="regular-text" />
 							<button id="profile_pic_button" class="upload_image_button wt_button black_alt small"
 								data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
 								data-uploader-title="<?php esc_attr_e( 'Choose a Profile Image' ); ?>"
@@ -192,8 +191,8 @@ Theme My Login override of profile template.
 						<?php for($i=1; $i<=6; $i++) : ?>
 						<tr>
 							<td>
-								<img id="gallery_pic_<?php echo $i ?>_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" />
-								<input type="hidden" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $user->ID ) ); ?>" class="regular-text" />
+								<img id="gallery_pic_<?php echo $i ?>_img" src="<?php echo wp_get_attachment_thumb_url( get_the_author_meta( 'gallery_pic_'.$i, $current_user->ID ) ); ?>" />
+								<input type="hidden" name="gallery_pic_<?php echo $i ?>" id="gallery_pic_<?php echo $i ?>" value="<?php echo esc_attr( get_the_author_meta( 'gallery_pic_'.$i, $current_user->ID ) ); ?>" class="regular-text" />
 								<button id="gallery_pic_<?php echo $i ?>_button" class="upload_image_button wt_button black_alt"
 									data-update-link="<?php echo esc_attr( $modal_update_href ); ?>"
 									data-uploader-title="<?php esc_attr_e( 'Choose a Gallery Image' ); ?>"
