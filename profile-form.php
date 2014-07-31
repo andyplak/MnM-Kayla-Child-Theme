@@ -35,7 +35,15 @@ Theme My Login override of profile template.
 		<input type="hidden" name="checkuser_id" value="<?php echo $current_user->ID; ?>" />
 
 		<?php $template->the_action_template_message( 'profile' ); ?>
-		<?php $template->the_errors(); ?>
+		<?php
+		// P tags churned out by EM mess up TML error output which is also contained in a P tag
+		// Manipulate the string here to prevent
+		$errors = $template->get_errors();
+		$errors = str_replace('<p class="error">', '<div class="error">', $errors);
+		$errors = substr($errors, 0, -5);
+		$errors .= '</div>';
+		echo $errors;
+		?>
 
 
 		<div class="one_half">
