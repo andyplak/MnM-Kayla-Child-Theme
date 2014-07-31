@@ -362,6 +362,7 @@ body.single-location header .inner {
   width: 1000px !important;
   padding: 0 !important;
   */
+  position: relative;
 }
 
 body.single-location .breadcrumbs {
@@ -375,17 +376,19 @@ body.single-location .location-image {
   vertical-align:middle;
   width: 65%;
   height: 175px;
-  position: relative;
 }
 
-body.single-location .location-image h1 {
+body.single-location .location-header {
   position: absolute;
   bottom: 0;
-  left: 10px;
-  margin: 0;
+  left: 40px;
+}
+
+body.single-location .location-header h1 {
   font-style: italic;
   font-size: 28px;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+  margin: 0;
 }
 
 body.single-location .location-map {
@@ -445,12 +448,38 @@ body.single-event .mnm-events-list {
 
 @media only screen and (max-width: 767px) {
 
+  .responsive body.single-location #wt_page header#intro .inner {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  body.single-location .location-image {
+    width: 50%;
+  }
+
+  body.single-location .location-header {
+    width: 100%;
+    left: 0;
+  }
+
+  body.single-location .location-header h1 {
+    width: 400px;
+    margin: auto;
+  }
+
+  body.single-location .location-map {
+    width: 50%;
+  }
+
   body.single-location #wt_content {
     padding: 20px 20px;
   }
 
-  body.single-location header .inner {
-    width: 100% !important;
+}
+
+@media only screen and (max-width: 480px) {
+  body.single-location .location-header h1 {
+    width: 280px;
   }
 }
 

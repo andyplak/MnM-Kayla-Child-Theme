@@ -17,12 +17,17 @@
   <header id="intro" class="clearfix">
     <div class="inner">
       <!--<div id="introType"> -->
-      <div class="location-image" style="<?php echo $ftrd_img_css ?>">
-        <h1><?php echo $EM_Location->output('#_LOCATIONNAME') ?> <?php echo $EM_Location->output('#_LOCATIONTOWN') ?></h1>
-      </div>
+      <div class="location-image" style="<?php echo $ftrd_img_css ?>"></div>
 
       <div class="location-map">
         <?php echo $EM_Location->output('#_LOCATIONMAP') ?>
+      </div>
+
+      <div class="location-header">
+        <h1>
+          <?php echo $EM_Location->output('#_LOCATIONNAME') ?><br class="hide-lg">
+          <?php echo $EM_Location->output('#_LOCATIONTOWN') ?>
+        </h1>
       </div>
 
     </div>
