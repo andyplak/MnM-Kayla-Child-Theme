@@ -23,7 +23,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
     <div class="three_fifth">
       <div class="two_fifth">
 
-        <div class="framed_box rounded date-n-time">
+        <div class="framed_box date-n-time">
           <h6 class="framed_box_title">Date &amp; Time</h6>
           <div class="framed_box_content clearfix">
             <h5>
@@ -53,7 +53,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
           </div>
         </div>
 
-        <div class="framed_box rounded participants">
+        <div class="framed_box participants">
           <h6 class="framed_box_title">Participants</h6>
           <div class="framed_box_content clearfix">
             <?php
@@ -79,7 +79,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
         </div>
 
       <?php if( !is_null( $EM_Location = $EM_Event->get_location() ) ) : ?>
-        <div class="framed_box rounded location">
+        <div class="framed_box location">
           <h6 class="framed_box_title">Location</h6>
           <div class="framed_box_content clearfix">
             <h5>
@@ -122,7 +122,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
     <div class="two_fifth last">
 
-      <div class="framed_box rounded">
+      <div class="framed_box">
         <h6 class="framed_box_title">Book this event</h6>
         <div class="framed_box_content clearfix">
           <?php echo $EM_Event->output('#_BOOKINGFORM'); ?>
@@ -135,7 +135,7 @@ $EM_Event = em_get_event( $post->ID, 'post_id' );
 
     <div class="clearfix"></div>
 
-    <div class="framed_box rounded">
+    <div class="framed_box">
       <h6 class="framed_box_title">Similar Events like this</h6>
 
       <?php

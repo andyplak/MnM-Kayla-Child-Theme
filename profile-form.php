@@ -48,7 +48,7 @@ Theme My Login override of profile template.
 
 		<div class="one_half">
 
-			<div class="framed_box rounded">
+			<div class="framed_box">
 				<h6 class="framed_box_title">My Profile</h6>
 
 				<div class="framed_box_content clearfix">
@@ -184,7 +184,7 @@ Theme My Login override of profile template.
 
 		<div class="one_half last">
 
-			<div class="framed_box rounded">
+			<div class="framed_box">
 				<h6 class="framed_box_title">My Matches</h6>
 				<div class="framed_box_content clearfix">
 					<?php mnm_my_past_speed_dating_events() ?>
@@ -192,7 +192,7 @@ Theme My Login override of profile template.
 			</div>
 
 			<!-- Photos -->
-			<div class="framed_box rounded">
+			<div class="framed_box">
 				<h6 class="framed_box_title">My Photos</h6>
 				<div class="framed_box_content clearfix">
 					<table class="my-photos">
@@ -214,7 +214,7 @@ Theme My Login override of profile template.
 			</div>
 
 
-			<div class="framed_box rounded">
+			<div class="framed_box">
 				<h6 class="framed_box_title">My Settings</h6>
 				<div class="framed_box_content clearfix email-subscription-container">
 					<table class="form-table">
@@ -223,7 +223,7 @@ Theme My Login override of profile template.
 			</div>
 
 
-			<div class="framed_box rounded">
+			<div class="framed_box">
 				<h6 class="framed_box_title">Events you'll like</h6>
 
 				<?php em_locate_template('templates/events-list.php', true, $recommended_events ); ?>

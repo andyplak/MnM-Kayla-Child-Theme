@@ -95,7 +95,7 @@
 
       <div class="clearfix"></div>
 
-      <div class="framed_box rounded hide-sm">
+      <div class="framed_box hide-sm">
         <h6 class="framed_box_title">Upcoming Events</h6>
 
       <?php
@@ -112,7 +112,7 @@
     </div>
 
     <div class="one_fourth last">
-      <div class="framed_box rounded">
+      <div class="framed_box">
         <h6 class="framed_box_title">Getting There</h6>
         <div class="framed_box_content clearfix">
           <h5><i class="wt-icon-map-marker"></i> Address</h5>
@@ -138,7 +138,7 @@
         </div>
       </div>
 
-      <div class="framed_box rounded">
+      <div class="framed_box">
         <h6 class="framed_box_title">Locations Nearby</h6>
         <div class="framed_box_content clearfix">
 
@@ -170,7 +170,7 @@
 
       </div>
 
-      <div class="framed_box rounded hide-lg">
+      <div class="framed_box hide-lg">
         <h6 class="framed_box_title">Upcoming Events</h6>
 
         <?php echo em_get_events_list_shortcode( $event_list_args ); ?>
