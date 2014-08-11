@@ -78,6 +78,38 @@ i.mnm-icon.female {
   margin-top: -10px;
 }
 
+.mnm-header-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  vertical-align:middle;
+  width: 100%;
+  height: 175px;
+}
+
+.mnm-header-title {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+}
+
+.mnm-header-title h1 {
+  font-style: italic;
+  font-size: 28px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+.mnm-breadcrumb-cont {
+  margin-top: -30px;
+  padding: 0 20px;
+}
+
+.mnm-breadcrumb-cont .breadcrumbs {
+  float: right;
+}
+
+
 
 /************ Responsive menu **********/
 #responsive_nav_open,
