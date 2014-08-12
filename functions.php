@@ -237,3 +237,30 @@ function mnm_kayla_emp_forms_output_field_input($html, $EM_Form, $field, $post) 
   return $html;
 }
 add_filter('emp_forms_output_field_input', 'mnm_kayla_emp_forms_output_field_input', 10 , 4);
+
+
+/**
+ * Custom post type for Meet and Match news
+ */
+function mnm_create_news_post_type() {
+  register_post_type( 'news',
+    array(
+      'labels' => array(
+        'name' => __( 'News','meetnmatch' ),
+        'singular_name' => __( 'News Article','meetnmatch' ),
+        'add_new_item' => __( 'Add News Article','meetnmatch' ),
+        'not_found' => __( 'No news articles found','meetnmatch' ),
+        'edit_item' => __( 'Edit News Article','meetnmatch' ),
+        'view_item' => __( 'View Article','meetnmatch' ),
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'menu_icon' => 'dashicons-media-document',
+      'menu_position' => 7,
+      'rewrite' => array('slug' => 'news'),
+      'supports' => array('title', 'editor', 'thumbnail'),
+      //'register_meta_box_cb' => 'g2_add_product_metaboxes'
+    )
+  );
+}
+add_action( 'init', 'mnm_create_news_post_type' );

@@ -555,6 +555,13 @@ body.single-event .mnm-events-list {
   padding: 10px;
 }
 
+/************* News ****************/
+
+.mnm-header-image.news {
+  background: url('images/news-banner.jpg');
+}
+
+
 /************* Media Queries **************/
 
 .hide-sm {
